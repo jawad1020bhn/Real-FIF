@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="assets/gsap.min.js"></script>
+    <style>
+      :root { --ground:#07130c; --pitch:#0d3b21; --ink:#fff; --accent:#37e08a; --gold:#ffd84d; }
+      * { margin:0; padding:0; box-sizing:border-box; }
+      html, body { margin:0; width:1080px; height:1920px; overflow:hidden; background:var(--ground); font-family:sans-serif; color:var(--ink); }
+      #root { position:relative; width:100%; height:100%; background:radial-gradient(800px 1100px at 50% 40%, var(--pitch), var(--ground)); }
+      .scene { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:0 70px; }
+      .kicker { font-size:30px; letter-spacing:.38em; color:var(--accent); font-weight:700; }
+      #s1-title { font-size:150px; font-weight:900; line-height:.95; margin-top:28px; }
+      #s1-title .gold { color:var(--gold); }
+      #s1-sub { font-size:44px; margin-top:30px; color:#d9ffe6; line-height:1.3; }
+      h2 { font-size:64px; font-weight:900; margin-bottom:48px; line-height:1.1; }
+      .stats { display:grid; grid-template-columns:1fr 1fr; gap:28px; width:100%; }
+      .stat { padding:40px 6px; border:3px solid rgba(55,224,138,.55); border-radius:26px; background:rgba(0,0,0,.38); }
+      .num { font-size:76px; font-weight:900; color:var(--gold); }
+      .lbl { font-size:28px; margin-top:8px; color:#d9ffe6; text-transform:uppercase; letter-spacing:.1em; }
+      .cards { display:flex; flex-direction:column; gap:26px; width:100%; }
+      .card { display:flex; align-items:center; gap:30px; padding:30px 40px; border-radius:26px; background:linear-gradient(160deg,#14532d,#05240f); border:3px solid var(--gold); text-align:left; }
+      .ovr { font-size:96px; font-weight:900; color:var(--gold); line-height:1; }
+      .pname { font-size:50px; font-weight:800; }
+      .pmeta { font-size:26px; color:#bff5d2; }
+      #s3-url { margin-top:44px; font-size:34px; color:var(--gold); font-weight:700; }
+      #s3-badge { margin-top:16px; font-size:24px; letter-spacing:.28em; color:var(--accent); text-transform:uppercase; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="12" data-width="1080" data-height="1920">
+      <section id="s1" class="scene clip" data-start="0" data-duration="4" data-track-index="0">
+        <div id="s1-kicker" class="kicker">FIFA 14 &times; FC 27</div>
+        <h1 id="s1-title">REAL-<span class="gold">FIF</span></h1>
+        <p id="s1-sub">The FC 27 roster update for FIFA 14</p>
+      </section>
+      <section id="s2" class="scene clip" data-start="4" data-duration="4" data-track-index="0">
+        <h2 id="s2-head">A full squad rebuild</h2>
+        <div class="stats">
+          <div class="stat" id="stat1"><div class="num" data-count="25305">0</div><div class="lbl">Players</div></div>
+          <div class="stat" id="stat2"><div class="num" data-count="922">0</div><div class="lbl">Teams</div></div>
+          <div class="stat" id="stat3"><div class="num" data-count="55">0</div><div class="lbl">Leagues</div></div>
+          <div class="stat" id="stat4"><div class="num" data-count="43066">0</div><div class="lbl">Names</div></div>
+        </div>
+      </section>
+      <section id="s3" class="scene clip" data-start="8" data-duration="4" data-track-index="0">
+        <h2 id="s3-head">Top rated</h2>
+        <div class="cards">
+          <div class="card" id="card1"><div class="ovr">91</div><div><div class="pname">Mbapp&eacute;</div><div class="pmeta">OVR &middot; FC 27 data</div></div></div>
+          <div class="card" id="card2"><div class="ovr">89</div><div><div class="pname">Messi</div><div class="pmeta">OVR &middot; FC 27 data</div></div></div>
+          <div class="card" id="card3"><div class="ovr">84</div><div><div class="pname">Ronaldo</div><div class="pmeta">OVR &middot; FC 27 data</div></div></div>
+        </div>
+        <div id="s3-url">github.com/jawad1020bhn/Real-FIF</div>
+        <div id="s3-badge">Release: fc27-roster-update</div>
+      </section>
+      <audio id="bgm" data-start="0" data-duration="12" data-track-index="1" data-volume="0.35" src="assets/music.wav"></audio>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo("#s1-kicker", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.2);
+      tl.fromTo("#s1-title", { scale: 0.92 }, { scale: 1, duration: 0.7, ease: "back.out(1.6)" }, 0);
+      tl.fromTo("#s1-sub", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 0.9);
+      tl.to("#s1", { opacity: 0, duration: 0.35, ease: "power2.in" }, 3.65);
+      tl.fromTo("#s2", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 4.0);
+      tl.fromTo("#s2-head", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 4.2);
+      ["#stat1","#stat2","#stat3","#stat4"].forEach((id,i)=>{
+        tl.fromTo(id, { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 4.5 + i*0.2);
+      });
+      document.querySelectorAll(".num").forEach((el)=>{
+        const target = Number(el.dataset.count); const state = { v: 0 };
+        tl.to(state, { v: target, duration: 1.6, ease: "power2.out",
+          onUpdate: () => { el.textContent = Math.round(state.v).toLocaleString("en-US"); } }, 4.6);
+      });
+      tl.to("#s2", { opacity: 0, duration: 0.35, ease: "power2.in" }, 7.65);
+      tl.fromTo("#s3", { opacity: 0 }, { opacity: 1, duration: 0.3 }, 8.0);
+      tl.fromTo("#s3-head", { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 8.2);
+      ["#card1","#card2","#card3"].forEach((id,i)=>{
+        tl.fromTo(id, { opacity: 0, x: -60 }, { opacity: 1, x: 0, duration: 0.5, ease: "back.out(1.3)" }, 8.55 + i*0.3);
+      });
+      tl.fromTo("#s3-url", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.45, ease: "power3.out" }, 9.8);
+      tl.fromTo("#s3-badge", { opacity: 0 }, { opacity: 1, duration: 0.45 }, 10.1);
+      tl.to("#s3", { opacity: 0, duration: 0.4, ease: "power2.in" }, 11.6);
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
