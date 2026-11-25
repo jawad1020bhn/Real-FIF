@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face { font-family: "Scheherazade New"; src: url("assets/fonts/ScheherazadeNew-Regular.ttf"); }
+@font-face { font-family: "Scheherazade New"; src: url("assets/fonts/ScheherazadeNew-Bold.ttf"); font-weight: 700; }
+@font-face { font-family: "Amiri"; src: url("assets/fonts/Amiri-Regular.ttf"); }
+:root { --gold: #d9a84e; --gold2: #f3d489; --ink: #ffffff; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { width:1080px; height:1920px; overflow:hidden; background:#000; font-family: Georgia, serif; color:var(--ink); }
+#root { position:relative; width:100%; height:100%; background:#000; }
+.scene { position:absolute; inset:0; overflow:hidden; }
+.bgwrap { position:absolute; inset:0; overflow:hidden; }
+.bg { width:100%; height:100%; object-fit:cover; }
+.scrim { position:absolute; inset:0; background: linear-gradient(180deg, rgba(2,6,14,.88) 0%, rgba(2,6,14,.62) 30%, rgba(2,6,14,0) 55%, rgba(2,6,14,.28) 82%, rgba(2,6,14,.72) 100%); }
+.content { position:absolute; left:70px; right:70px; top:215px; text-align:center; }
+.header { font-family: sans-serif; font-size:27px; letter-spacing:.42em; color:var(--gold2); font-weight:600; }
+.header .dia { color:var(--gold); font-size:20px; }
+.ornrow { display:flex; align-items:center; justify-content:center; gap:18px; margin-top:44px; }
+.orn-line { width:120px; height:2px; background:linear-gradient(90deg, transparent, var(--gold)); }
+.orn-line:last-child { background:linear-gradient(90deg, var(--gold), transparent); }
+.orn { font-family:"Scheherazade New", serif; width:74px; height:74px; line-height:74px; font-size:36px; color:#0a0f1c; background:radial-gradient(circle at 35% 30%, var(--gold2), var(--gold)); border-radius:50%; box-shadow:0 0 0 5px rgba(217,168,78,.3), 0 0 34px rgba(217,168,78,.45); font-weight:700; }
+.arabic { font-family:"Scheherazade New","Amiri",serif; font-size:104px; line-height:1.85; margin-top:26px; text-shadow:0 4px 30px rgba(0,0,0,.85); }
+.english { font-size:41px; font-style:italic; line-height:1.45; margin-top:16px; color:#f5eedd; text-shadow:0 3px 20px rgba(0,0,0,.9); }
+#intro .content, #outro .content { top:0; left:70px; right:70px; height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+#intro-title-ar { font-family:"Scheherazade New",serif; font-size:170px; line-height:1.6; color:var(--gold2); text-shadow:0 6px 44px rgba(0,0,0,.9); }
+#intro-title { font-family:sans-serif; font-size:64px; font-weight:700; letter-spacing:.34em; margin-top:10px; text-indent:.34em; }
+#intro-sub { font-family:sans-serif; font-size:28px; letter-spacing:.4em; color:#e9dcc0; margin-top:26px; text-indent:.4em; }
+.intro-rule { width:180px; height:2px; background:var(--gold); margin-top:34px; }
+#outro-ar { font-family:"Scheherazade New",serif; font-size:104px; line-height:1.85; }
+#outro-en { font-size:44px; font-style:italic; color:var(--gold2); margin-top:8px; }
+#outro-ref { font-family:sans-serif; font-size:26px; letter-spacing:.38em; color:#cfc4a6; margin-top:44px; }
+#outro-credit { font-family:sans-serif; font-size:22px; letter-spacing:.24em; color:#8f887a; margin-top:18px; }
+#grain { position:absolute; inset:0; opacity:.055; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E"); }
+#vignette { position:absolute; inset:0; box-shadow: inset 0 0 260px rgba(0,0,0,.75); }
+#progress-track { position:absolute; left:0; right:0; bottom:0; height:7px; background:rgba(255,255,255,.14); }
+#progress { height:100%; width:100%; background:linear-gradient(90deg, var(--gold), var(--gold2)); transform-origin:left center; }
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="28" data-width="1080" data-height="1920">
+
+  <section id="intro" class="scene clip" data-start="0" data-duration="2.7" data-track-index="1">
+    <div class="bgwrap"><img id="intro-bg" class="bg" src="assets/scene1.jpg" alt="" /></div>
+    <div class="scrim"></div>
+    <div class="content">
+      <div id="intro-title-ar" dir="rtl" lang="ar">الشَّرْح</div>
+      <h1 id="intro-title">ASH-SHARH</h1>
+      <div id="intro-sub">THE RELIEF ◆ SURAH 94</div>
+      <div class="intro-rule" id="intro-rule"></div>
+    </div>
+  </section>
+
+      <section id="v1" class="scene clip" data-start="2.7" data-duration="2.25" data-track-index="1">
+        <div class="bgwrap"><img id="v1-bg" class="bg" src="assets/scene1.jpg" alt="" /></div>
+        <div class="scrim"></div>
+        <div class="content" id="v1-content">
+          <div class="header">SURAH ASH-SHARH <span class="dia">◆</span> VERSE 1</div>
+          <div class="ornrow"><span class="orn-line"></span><span class="orn">١</span><span class="orn-line"></span></div>
+          <div class="arabic" dir="rtl" lang="ar">أَلَمْ نَشْرَحْ لَكَ صَدْرَكَ</div>
+          <div class="english">Did We not expand for you your chest?</div>
+        </div>
+      </section>
+      <section id="v2" class="scene clip" data-start="4.95" data-duration="2.75" data-track-index="1">
+        <div class="bgwrap"><img id="v2-bg" class="bg" src="assets/scene2.jpg" alt="" /></div>
+        <div class="scrim"></div>
+        <div class="content" id="v2-content">
+          <div class="header">SURAH ASH-SHARH <span class="dia">◆</span> VERSE 2</div>
+          <div class="ornrow"><span class="orn-line"></span><span class="orn">٢</span><span class="orn-line"></span></div>
+          <div class="arabic" dir="rtl" lang="ar">وَوَضَعْنَا عَنكَ وِزْرَكَ</div>
+          <div class="english">And We removed from you your burden</div>
+        </div>
+      </section>
+      <section id="v3" class="scene clip" data-start="7.7" data-duration="2.65" data-track-index="1">
+        <div class="bgwrap"><img id="v3-bg" class="bg" src="assets/scene3.jpg" alt="" /></div>
+        <div class="scrim"></div>
+        <div class="content" id="v3-content">
+          <div class="header">SURAH ASH-SHARH <span class="dia">◆</span> VERSE 3</div>
+          <div class="ornrow"><span class="orn-line"></span><span class="orn">٣</span><span class="orn-line"></span></div>
+          <div class="arabic" dir="rtl" lang="ar">الَّذِيٓ أَنقَضَ ظَهْرَكَ</div>
+          <div class="english">Which had weighed upon your back</div>
+        </div>
+      </section>
+      <section id="v4" class="scene clip" data-start="10.35" data-duration="2.40" data-track-index="1">
+        <div class="bgwrap"><img id="v4-bg" class="bg" src="assets/scene4.jpg" alt="" /></div>
+        <div class="scrim"></div>
+        <div class="content" id="v4-content">
+          <div class="header">SURAH ASH-SHARH <span class="dia">◆</span> VERSE 4</div>
+          <div class="ornrow"><span class="orn-line"></span><span class="orn">٤</span><span class="orn-line"></span></div>
+          <div class="arabic" dir="rtl" lang="ar">وَرَفَعْنَا لَكَ ذِكْرَكَ</div>
+          <div class="english">And raised high for you your repute.</div>
+        </div>
+      </section>
+      <section id="v5" class="scene clip" data-start="12.75" data-duration="2.85" data-track-index="1">
+        <div class="bgwrap"><img id="v5-bg" class="bg" src="assets/scene5.jpg" alt="" /></div>
+        <div class="scrim"></div>
+        <div class="content" id="v5-content">
+          <div class="header">SURAH ASH-SHARH <span class="dia">◆</span> VERSE 5</div>
+          <div class="ornrow"><span class="orn-line"></span><span class="orn">٥</span><span class="orn-line"></span></div>
+          <div class="arabic" dir="rtl" lang="ar">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</div>
+          <div class="english">For indeed, with hardship [will be] ease.</div>
+        </div>
+      </section>
+      <section id="v6" class="scene clip" data-start="15.6" data-duration="3.10" data-track-index="1">
+        <div class="bgwrap"><img id="v6-bg" class="bg" src="assets/scene6.jpg" alt="" /></div>
+        <div class="scrim"></div>
+        <div class="content" id="v6-content">
+          <div class="header">SURAH ASH-SHARH <span class="dia">◆</span> VERSE 6</div>
+          <div class="ornrow"><span class="orn-line"></span><span class="orn">٦</span><span class="orn-line"></span></div>
+          <div class="arabic" dir="rtl" lang="ar">إِنَّ مَعَ الْعُسْرِ يُسْرًا</div>
+          <div class="english">Indeed, with hardship [will be] ease.</div>
+        </div>
+      </section>
+      <section id="v7" class="scene clip" data-start="18.7" data-duration="2.80" data-track-index="1">
+        <div class="bgwrap"><img id="v7-bg" class="bg" src="assets/scene7.jpg" alt="" /></div>
+        <div class="scrim"></div>
+        <div class="content" id="v7-content">
+          <div class="header">SURAH ASH-SHARH <span class="dia">◆</span> VERSE 7</div>
+          <div class="ornrow"><span class="orn-line"></span><span class="orn">٧</span><span class="orn-line"></span></div>
+          <div class="arabic" dir="rtl" lang="ar">فَإِذَا فَرَغْتَ فَانصَبْ</div>
+          <div class="english">So when you have finished [your duties], then stand up [for worship].</div>
+        </div>
+      </section>
+      <section id="v8" class="scene clip" data-start="21.5" data-duration="3.10" data-track-index="1">
+        <div class="bgwrap"><img id="v8-bg" class="bg" src="assets/scene8.jpg" alt="" /></div>
+        <div class="scrim"></div>
+        <div class="content" id="v8-content">
+          <div class="header">SURAH ASH-SHARH <span class="dia">◆</span> VERSE 8</div>
+          <div class="ornrow"><span class="orn-line"></span><span class="orn">٨</span><span class="orn-line"></span></div>
+          <div class="arabic" dir="rtl" lang="ar">وَإِلَىٰ رَبِّكَ فَارْغَب</div>
+          <div class="english">And to your Lord direct [your] longing.</div>
+        </div>
+      </section>
+
+  <section id="outro" class="scene clip" data-start="24.6" data-duration="3.4" data-track-index="1">
+    <div class="content">
+      <div id="outro-ar" dir="rtl" lang="ar">فَإِنَّ مَعَ الْعُسْرِ يُسْرًا</div>
+      <div id="outro-en">&ldquo;Indeed, with hardship comes ease.&rdquo;</div>
+      <div id="outro-ref">SURAH ASH-SHARH ◆ 94 : 5&ndash;6</div>
+      <div id="outro-credit">QUR&rsquo;AN RECITATION ◆ TRANSLATION: SAHEEH INTERNATIONAL</div>
+    </div>
+  </section>
+
+  <div id="grain" class="clip" data-start="0" data-duration="28" data-track-index="3"></div>
+  <div id="vignette" class="clip" data-start="0" data-duration="28" data-track-index="3"></div>
+  <div id="progress-track" class="clip" data-start="0" data-duration="28" data-track-index="4"><div id="progress"></div></div>
+
+  <audio id="recitation" data-start="0" data-duration="28" data-track-index="2" data-volume="1" src="assets/recitation.wav"></audio>
+</div>
+<script>
+const tl = gsap.timeline({ paused: true });
+tl.fromTo("#progress", { scaleX: 0 }, { scaleX: 1, duration: 28, ease: "none" }, 0);
+
+// Intro (0–2.7s)
+tl.fromTo("#intro-bg", { scale: 1.05 }, { scale: 1.13, duration: 2.7, ease: "none" }, 0);
+tl.fromTo("#intro-title-ar", { opacity: 0, y: 34 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.25);
+tl.fromTo("#intro-title", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 0.7);
+tl.fromTo("#intro-sub", { opacity: 0 }, { opacity: 1, duration: 0.7 }, 1.15);
+tl.fromTo("#intro-rule", { scaleX: 0 }, { scaleX: 1, duration: 0.7, ease: "power2.out" }, 1.3);
+tl.to("#intro", { opacity: 0, duration: 0.45, ease: "power1.in" }, 2.25);
+
+      tl.fromTo("#v1-bg", { scale: 1.03 }, { scale: 1.11, duration: 2.25, ease: "none" }, 2.7);
+      tl.fromTo("#v1", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 2.7);
+      tl.fromTo("#v1-content .header", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 2.85);
+      tl.fromTo("#v1-content .arabic", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 3.0);
+      tl.fromTo("#v1-content .english", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 3.2);
+      tl.to("#v1", { opacity: 0, duration: 0.4, ease: "power1.in" }, 4.55);
+      tl.fromTo("#v2-bg", { scale: 1.03 }, { scale: 1.11, duration: 2.75, ease: "none" }, 4.95);
+      tl.fromTo("#v2", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 4.95);
+      tl.fromTo("#v2-content .header", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 5.1000000000000005);
+      tl.fromTo("#v2-content .arabic", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 5.25);
+      tl.fromTo("#v2-content .english", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 5.45);
+      tl.to("#v2", { opacity: 0, duration: 0.4, ease: "power1.in" }, 7.3);
+      tl.fromTo("#v3-bg", { scale: 1.03 }, { scale: 1.11, duration: 2.65, ease: "none" }, 7.7);
+      tl.fromTo("#v3", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 7.7);
+      tl.fromTo("#v3-content .header", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 7.8500000000000005);
+      tl.fromTo("#v3-content .arabic", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 8.0);
+      tl.fromTo("#v3-content .english", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 8.2);
+      tl.to("#v3", { opacity: 0, duration: 0.4, ease: "power1.in" }, 9.95);
+      tl.fromTo("#v4-bg", { scale: 1.03 }, { scale: 1.11, duration: 2.40, ease: "none" }, 10.35);
+      tl.fromTo("#v4", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 10.35);
+      tl.fromTo("#v4-content .header", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 10.5);
+      tl.fromTo("#v4-content .arabic", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 10.65);
+      tl.fromTo("#v4-content .english", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 10.85);
+      tl.to("#v4", { opacity: 0, duration: 0.4, ease: "power1.in" }, 12.35);
+      tl.fromTo("#v5-bg", { scale: 1.03 }, { scale: 1.11, duration: 2.85, ease: "none" }, 12.75);
+      tl.fromTo("#v5", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 12.75);
+      tl.fromTo("#v5-content .header", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 12.9);
+      tl.fromTo("#v5-content .arabic", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 13.05);
+      tl.fromTo("#v5-content .english", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 13.25);
+      tl.to("#v5", { opacity: 0, duration: 0.4, ease: "power1.in" }, 15.2);
+      tl.fromTo("#v6-bg", { scale: 1.03 }, { scale: 1.11, duration: 3.10, ease: "none" }, 15.6);
+      tl.fromTo("#v6", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 15.6);
+      tl.fromTo("#v6-content .header", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 15.75);
+      tl.fromTo("#v6-content .arabic", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 15.9);
+      tl.fromTo("#v6-content .english", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 16.1);
+      tl.to("#v6", { opacity: 0, duration: 0.4, ease: "power1.in" }, 18.3);
+      tl.fromTo("#v7-bg", { scale: 1.03 }, { scale: 1.11, duration: 2.80, ease: "none" }, 18.7);
+      tl.fromTo("#v7", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 18.7);
+      tl.fromTo("#v7-content .header", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 18.849999999999998);
+      tl.fromTo("#v7-content .arabic", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 19.0);
+      tl.fromTo("#v7-content .english", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 19.2);
+      tl.to("#v7", { opacity: 0, duration: 0.4, ease: "power1.in" }, 21.1);
+      tl.fromTo("#v8-bg", { scale: 1.03 }, { scale: 1.11, duration: 3.10, ease: "none" }, 21.5);
+      tl.fromTo("#v8", { opacity: 0 }, { opacity: 1, duration: 0.45, ease: "power1.out" }, 21.5);
+      tl.fromTo("#v8-content .header", { opacity: 0, y: -18 }, { opacity: 1, y: 0, duration: 0.5, ease: "power3.out" }, 21.65);
+      tl.fromTo("#v8-content .arabic", { opacity: 0, y: 26 }, { opacity: 1, y: 0, duration: 0.65, ease: "power3.out" }, 21.8);
+      tl.fromTo("#v8-content .english", { opacity: 0, y: 18 }, { opacity: 1, y: 0, duration: 0.55, ease: "power3.out" }, 22.0);
+      tl.to("#v8", { opacity: 0, duration: 0.4, ease: "power1.in" }, 24.25);
+
+// Outro (24.6–28s)
+tl.fromTo("#outro", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power1.out" }, 24.6);
+tl.fromTo("#outro-ar", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" }, 24.85);
+tl.fromTo("#outro-en", { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" }, 25.3);
+tl.fromTo("#outro-ref", { opacity: 0 }, { opacity: 1, duration: 0.7 }, 25.75);
+tl.fromTo("#outro-credit", { opacity: 0 }, { opacity: 1, duration: 0.7 }, 26.05);
+tl.to("#outro", { opacity: 0, duration: 0.8, ease: "power1.in" }, 27.2);
+
+window.__timelines = window.__timelines || {};
+window.__timelines["main"] = tl;
+</script>
+</body>
+</html>
