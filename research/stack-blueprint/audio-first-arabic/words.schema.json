@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Arabic word-timing handoff contract (words.json)",
+  "description": "Output of stage 2 (WhisperX) and the ONLY input for the karaoke caption component and scene boundaries. Times are seconds on audio/clean.wav, i.e. AFTER silence cuts. display keeps tashkeel; align is diacritics-stripped for forced alignment. Extra fields are allowed; downstream stages read only what they need.",
+  "type": "object",
+  "required": ["language", "direction", "audio", "duration", "words"],
+  "additionalProperties": true,
+  "properties": {
+    "language": { "type": "string", "const": "ar" },
+    "direction": { "type": "string", "enum": ["rtl", "ltr"], "default": "rtl" },
+    "audio": { "type": "string", "description": "Relative path to the cleaned audio used for alignment" },
+    "duration": { "type": "number", "minimum": 0 },
+    "fps": { "type": "integer", "default": 30 },
+    "align_model": { "type": "string", "default": "jonatasgrosman/wav2vec2-large-xlsr-53-arabic" },
+    "asr_model": { "type": "string", "default": "large-v3" },
+    "edits": { "type": "string", "description": "Relative path to the Auto-Editor edit decision list, if silence was cut" },
+    "source_text": { "type": "string", "description": "Relative path to the reviewed script; the ASR must NOT rewrite it" },
+    "words": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["display", "align", "start", "end", "score", "line"],
+        "properties": {
+          "display": { "type": "string", "description": "Word as shown, WITH tashkeel and original spelling" },
+          "align": { "type": "string", "description": "Diacritics-stripped form used for wav2vec2 forced alignment" },
+          "start": { "type": "number", "minimum": 0 },
+          "end": { "type": "number", "minimum": 0 },
+          "score": { "type": "number", "minimum": 0, "maximum": 1, "description": "0 = interpolated / unverified; verify by eye" },
+          "line": { "type": "integer", "minimum": 0, "description": "Index into lines[]; the full shaped line is what gets rendered" },
+          "bdi": { "type": "boolean", "default": false, "description": "Wrap in <bdi> when the word is a number or Latin token inside RTL text" },
+          "note": { "type": "string" }
+        },
+        "additionalProperties": true
+      }
+    },
+    "lines": {
+      "type": "array",
+      "description": "Whole shaped lines rendered as one text run; word highlighting happens inside the line",
+      "items": {
+        "type": "object",
+        "required": ["index", "text", "start", "end"],
+        "properties": {
+          "index": { "type": "integer", "minimum": 0 },
+          "text": { "type": "string" },
+          "start": { "type": "number" },
+          "end": { "type": "number" }
+        }
+      }
+    },
+    "unverified": {
+      "type": "array",
+      "description": "Indices of words whose timing was interpolated; must appear in qa/report.md",
+      "items": { "type": "integer" }
+    }
+  }
+}

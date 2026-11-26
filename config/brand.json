@@ -1,0 +1,47 @@
+{
+  "name": "Reel Studio",
+  "palette": {
+    "bg": "#07070A",
+    "ink": "#F5F5F7",
+    "accent": "#D9A84E",
+    "muted": "#8F887A",
+    "accent_soft": "rgba(217,168,78,.16)"
+  },
+  "safe_zones": {
+    "top": 300,
+    "bottom": 680,
+    "sides": 200,
+    "platform_band": {
+      "x0": 120,
+      "y0": 288,
+      "x1": 888,
+      "y1": 1248,
+      "narrow_right": 780
+    },
+    "note": "HyperFrames check uses TikTok/Reels/Shorts UI safe areas: y 288-1248, x 120-888; below y 840 TikTok narrows the right edge to 780. Arabic captions sit 20px higher because Scheherazade New has taller glyphs.",
+    "bottom_ar": 700
+  },
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "video_codec": "h264",
+    "audio_codec": "aac",
+    "target_lufs": -14
+  },
+  "platforms": [
+    "instagram-reels",
+    "youtube-shorts",
+    "tiktok"
+  ],
+  "type": {
+    "caption_min_px": 40,
+    "headline_min_px": 72
+  },
+  "voice": {
+    "tone": "direct, human, no hype",
+    "no_invented_numbers": true,
+    "drafts_only": true,
+    "humanize": true
+  }
+}

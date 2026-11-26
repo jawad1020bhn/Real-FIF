@@ -1,8 +1,10 @@
 # Surah Ash-Sharh (94) — Qur'an Reel
 
-A pro-studio vertical reel modelled on `sample.mp4` (Surah At-Takwir) in the repo
-root — same visual language, a different surah: **Ash-Sharh, "The Relief"**,
-home of *"Indeed, with hardship comes ease."*
+A pro-studio vertical Arabic reel kept as the harness's **reference example** for RTL typography, deterministic GSAP timelines and offline assets. Surah **Ash-Sharh, "The Relief"**, home of *"Indeed, with hardship comes ease."*
+
+## Role in this repo
+
+Reference example only — the harness produces new projects from `videos/_template/`. Do not edit this project when building a new reel.
 
 ## Deliverables
 
@@ -16,7 +18,7 @@ home of *"Indeed, with hardship comes ease."*
 - **Framework:** HyperFrames 0.9.94 (HTML/CSS/GSAP → headless Chrome → FFmpeg),
   project checks pass with `ok: true`.
 - **Structure:** 2.7 s title card → one illustrated scene per ayah (8) →
-  black-and-gold closing card (94:5–6), mirroring the sample's pacing.
+  black-and-gold closing card (94:5–6), with a 2.7 s title card and one illustrated scene per ayah.
 - **Artwork:** eight bespoke cinematic illustrations, one per verse — dawn
   breaking (v1), the burden dissolving (v2), the weighed-down ridge (v3),
   repute raised to the heavens (v4), the hardship canyon (v5) answered by the
@@ -25,7 +27,9 @@ home of *"Indeed, with hardship comes ease."*
   gold progress bar.
 - **Typography:** Scheherazade New for the Arabic (full tashkeel), gold
   letter-spaced surah/verse header and Eastern-Arabic numeral medallion —
-  same system as the sample. English: Saheeh International.
+  with an Arabic numeral medallion. English: Saheeh International.
+  `assets/fonts/OFL-ScheherazadeNew.txt` and `assets/fonts/OFL-Amiri.txt`
+  record the SIL Open Font Licence for the bundled Arabic fonts.
 - **Audio:** Qur'an recitation of Surah 94 (source MP3:
   `abderahmanrahmoun/quran-audio-apii` on GitHub, kept as
   `assets/recitation-source.mp3`). Verse boundaries were located by waveform

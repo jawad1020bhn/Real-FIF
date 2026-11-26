@@ -1,0 +1,20 @@
+# Keyless reel harness — pinned Python dependencies (Python 3.10–3.13)
+# Install: python3 -m pip install -r requirements.txt
+# Heavy ASR stack: whisperx pulls torch + CUDA wheels from PyPI (~2-4 GB).
+# If that fails or is too heavy, ALIGN_BACKEND=faster-whisper or --from-json still works.
+imageio-ffmpeg==0.8.1
+Pillow==11.3.0
+numpy==2.3.3
+soundfile==0.13.1
+
+# Offline Arabic shaping for the Pillow fallback (full-line bidi, no isolated words)
+arabic-reshaper==3.1.0
+python-bidi==0.6.12
+
+# Stage 1 — silence removal (chosen from the 12-tool list)
+auto-editor==29.3.1
+
+# Stage 2 — word timings (preferred + lightweight fallback)
+whisperx==3.8.6
+faster-whisper==1.2.1
+ctranslate2==4.9.1

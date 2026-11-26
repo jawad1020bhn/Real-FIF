@@ -1,0 +1,4 @@
+{
+  "_comment": "Single source of truth for EVERY number shown on screen. Empty by default \u2014 fill before rendering; the agent must never invent a value.",
+  "facts": []
+}

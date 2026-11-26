@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="@@LANG@@" dir="@@DIR@@">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>@@TITLE@@</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:"ReelArabic";src:url("assets/fonts/ScheherazadeNew-Bold.ttf") format("truetype");font-weight:700;font-display:block;}
+@font-face{font-family:"ReelArabicRegular";src:url("assets/fonts/Amiri-Regular.ttf") format("truetype");font-weight:400;font-display:block;}
+@font-face{font-family:"ReelLatin";src:url("assets/fonts/DejaVuSans-Bold.ttf") format("truetype");font-weight:700;font-display:block;}
+:root{--bg:@@BG@@;--ink:@@INK@@;--accent:@@ACCENT@@;--muted:@@MUTED@@;--accent-soft:@@ACCENT_SOFT@@;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg);color:var(--ink);font-family:@@FONT_STACK@@;direction:@@DIR@@;}
+#stage{position:relative;width:100%;height:100%;overflow:hidden;background:radial-gradient(1200px 900px at 50% 18%,var(--accent-soft),var(--bg) 72%);}
+#stage::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.05),transparent 35%,rgba(0,0,0,.45));}
+#brand{position:absolute;left:@@SIDE@@px;top:@@TOP@@px;font-size:28px;letter-spacing:.34em;color:var(--accent);text-transform:uppercase;direction:ltr;}
+#brand-rtl{position:absolute;right:@@SIDE@@px;top:@@TOP@@px;font-size:28px;letter-spacing:.12em;color:var(--accent);}
+#hook{position:absolute;left:@@SIDE@@px;right:@@SIDE@@px;top:360px;text-align:center;font-size:@@HEADLINE_PX@@px;font-weight:700;line-height:1.22;opacity:0;direction:@@DIR@@;text-wrap:balance;}
+#subtitle{position:absolute;left:@@SIDE@@px;right:@@SIDE@@px;top:570px;text-align:center;font-size:44px;line-height:1.5;color:var(--muted);opacity:0;direction:@@DIR@@;}
+.scene{position:absolute;left:@@CAPTION_LEFT@@px;right:@@CAPTION_RIGHT@@px;top:700px;opacity:0;text-align:center;direction:@@DIR@@;}
+.scene h2{font-size:66px;margin-bottom:22px;color:var(--ink);}
+.scene p{font-size:42px;color:var(--muted);line-height:1.45;}
+#outro{position:absolute;left:@@SIDE@@px;right:@@SIDE@@px;top:680px;text-align:center;font-size:60px;font-weight:700;opacity:0;direction:@@DIR@@;}
+#cta{position:absolute;left:@@CAPTION_LEFT@@px;right:@@CAPTION_RIGHT@@px;top:840px;text-align:center;font-size:38px;color:var(--muted);opacity:0;direction:@@DIR@@;}
+#caption{position:absolute;left:@@CAPTION_LEFT@@px;right:@@CAPTION_RIGHT@@px;bottom:@@BOTTOM@@px;height:250px;direction:@@DIR@@;unicode-bidi:isolate;}
+.caption-state{position:absolute;left:0;right:0;bottom:0;font-size:@@CAPTION_PX@@px;font-weight:700;line-height:1.6;text-align:center;white-space:normal;unicode-bidi:isolate;opacity:0;text-shadow:0 6px 22px rgba(0,0,0,.75);}
+.caption-state .w{color:rgba(255,255,255,.72);}
+.caption-state .w.active{color:var(--accent);text-shadow:0 0 24px var(--accent-soft),0 6px 22px rgba(0,0,0,.75);}
+.caption-state bdi{unicode-bidi:isolate;direction:ltr;}
+#progress-track{position:absolute;left:0;right:0;bottom:0;height:8px;background:rgba(255,255,255,.12);z-index:5;}
+#progress{height:100%;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:@@PROGRESS_ORIGIN@@;}
+#vignette{position:absolute;inset:0;box-shadow:inset 0 0 260px rgba(0,0,0,.72);pointer-events:none;z-index:4;}
+</style>
+</head>
+<body>
+<div id="stage" data-composition-id="main" data-start="0" data-duration="@@DURATION@@" data-width="1080" data-height="1920" data-fps="@@FPS@@" data-background="@@BG@@">
+@@BRAND_HTML@@
+  <div id="hook" dir="@@DIR@@" lang="@@LANG@@">@@HOOK@@</div>
+  <div id="subtitle" dir="@@DIR@@" lang="@@LANG@@">@@SUBTITLE@@</div>
+@@SCENES_HTML@@
+  <div id="outro" dir="@@DIR@@" lang="@@LANG@@">@@OUTRO@@</div>
+  <div id="cta" dir="@@DIR@@" lang="@@LANG@@">@@CTA@@</div>
+  <div id="caption" dir="@@DIR@@" lang="@@LANG@@" style="direction:@@DIR@@">
+@@CAPTION_STATES@@
+  </div>
+  <div id="progress-track"><div id="progress"></div></div>
+  <div id="vignette"></div>
+  <audio id="vo" data-start="0" data-duration="@@DURATION@@" data-track-index="2" data-volume="1" src="assets/audio.wav"></audio>
+</div>
+<script>
+// One paused GSAP timeline. HyperFrames seeks it to film time before each frame.
+// No independent clocks, randomness, network assets or free-running animation loops.
+// Arabic captions are FULL shaped lines; the active word is highlighted inside the line.
+const tl = gsap.timeline({paused:true});
+tl.set('#hook',{opacity:0,y:42},0);
+tl.to('#hook',{opacity:1,y:0,duration:0.65,ease:'power2.out'},0.12);
+tl.set('#subtitle',{opacity:0,y:28},0);
+tl.to('#subtitle',{opacity:1,y:0,duration:0.55,ease:'power2.out'},0.42);
+tl.fromTo('#progress',{scaleX:0},{scaleX:1,duration:@@DURATION@@,ease:'none'},0);
+@@GSAP_LINES@@
+tl.set({}, {}, @@DURATION@@);
+window.__timelines = window.__timelines || {};
+window.__timelines['main'] = tl;
+window.__duration = @@DURATION@@;
+window.__fps = @@FPS@@;
+</script>
+</body>
+</html>

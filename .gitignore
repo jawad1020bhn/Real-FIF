@@ -1,0 +1,32 @@
+# dependencies / runtimes
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# binaries + models (never commit; reproducible via npm/pip install)
+vendor/bin/
+models/*
+!models/README.md
+.hyperframes/
+
+# generated outputs
+out/
+reports/
+videos/*/renders/
+videos/*/qa/
+videos/*/frames/
+videos/*/audio/
+videos/_template/out/
+videos/_template/*-smoke/
+videos/*/input/*
+!videos/_template/input/.gitkeep
+*.mp4.tmp
+
+# local state / secrets (there are NO API keys; keep env local anyway)
+.env
+reel-state.local.json
+
+# OS
+.DS_Store
+Thumbs.db

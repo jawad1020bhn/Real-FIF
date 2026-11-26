@@ -1,0 +1,121 @@
+{
+  "language": "ar",
+  "direction": "rtl",
+  "audio": "audio/clean.wav",
+  "duration": 10.4,
+  "fps": 30,
+  "align_model": "jonatasgrosman/wav2vec2-large-xlsr-53-arabic",
+  "asr_model": "large-v3",
+  "source_text": "config/copy.ar.json",
+  "lines": [
+    {
+      "index": 0,
+      "text": "بِسْمِ اللَّهِ نَبْدَأُ الْعَمَلَ",
+      "start": 0.2,
+      "end": 3.1
+    },
+    {
+      "index": 1,
+      "text": "كُلُّ كَلِمَةٍ لَهَا وَقْتُهَا",
+      "start": 3.3,
+      "end": 6.2
+    },
+    {
+      "index": 2,
+      "text": "وَالنَّاتِجُ مِلَفٌّ وَاحِدٌ",
+      "start": 6.4,
+      "end": 9.2
+    }
+  ],
+  "words": [
+    {
+      "display": "بِسْمِ",
+      "align": "بسم",
+      "start": 0.2,
+      "end": 0.62,
+      "score": 0.94,
+      "line": 0
+    },
+    {
+      "display": "اللَّهِ",
+      "align": "الله",
+      "start": 0.66,
+      "end": 1.18,
+      "score": 0.92,
+      "line": 0
+    },
+    {
+      "display": "نَبْدَأُ",
+      "align": "نبدأ",
+      "start": 1.22,
+      "end": 1.86,
+      "score": 0.9,
+      "line": 0
+    },
+    {
+      "display": "الْعَمَلَ",
+      "align": "العمل",
+      "start": 1.9,
+      "end": 3.1,
+      "score": 0.88,
+      "line": 0
+    },
+    {
+      "display": "كُلُّ",
+      "align": "كل",
+      "start": 3.3,
+      "end": 3.72,
+      "score": 0.91,
+      "line": 1
+    },
+    {
+      "display": "كَلِمَةٍ",
+      "align": "كلمة",
+      "start": 3.76,
+      "end": 4.4,
+      "score": 0.89,
+      "line": 1
+    },
+    {
+      "display": "لَهَا",
+      "align": "لها",
+      "start": 4.44,
+      "end": 4.92,
+      "score": 0.9,
+      "line": 1
+    },
+    {
+      "display": "وَقْتُهَا",
+      "align": "وقتها",
+      "start": 4.96,
+      "end": 6.2,
+      "score": 0.87,
+      "line": 1
+    },
+    {
+      "display": "وَالنَّاتِجُ",
+      "align": "والناتج",
+      "start": 6.4,
+      "end": 7.16,
+      "score": 0.89,
+      "line": 2
+    },
+    {
+      "display": "مِلَفٌّ",
+      "align": "ملف",
+      "start": 7.2,
+      "end": 7.84,
+      "score": 0.86,
+      "line": 2
+    },
+    {
+      "display": "وَاحِدٌ",
+      "align": "واحد",
+      "start": 7.88,
+      "end": 9.2,
+      "score": 0.88,
+      "line": 2
+    }
+  ],
+  "unverified": []
+}

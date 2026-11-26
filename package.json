@@ -1,0 +1,49 @@
+{
+  "name": "keyless-reel-harness",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Keyless, offline-first Arabic/English reel factory (HyperFrames + FFmpeg + WhisperX/Auto-Editor + Agent Skills)",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "doctor": "node scripts/doctor.mjs",
+    "check": "node scripts/check.mjs",
+    "test:serve": "python3 -m http.server 8000 --bind 0.0.0.0",
+    "reel": "node scripts/reel.mjs",
+    "models:ar": "node scripts/models.mjs --lang ar",
+    "models:en": "node scripts/models.mjs --lang en",
+    "clean": "node scripts/clean.mjs",
+    "align": "node scripts/align.mjs",
+    "compose": "node scripts/compose.mjs",
+    "render": "node scripts/render.mjs",
+    "qa": "node scripts/qa.mjs",
+    "skills:enable": "node scripts/enable-skill.mjs",
+    "skills:audit": "node scripts/enable-skill.mjs --audit",
+    "skills:all": "node scripts/enable-skill.mjs --all",
+    "skills:list": "node scripts/enable-skill.mjs --list"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "1.1.0",
+    "@ffmpeg-installer/linux-x64": "4.1.0",
+    "@ffprobe-installer/ffprobe": "2.1.2",
+    "@ffprobe-installer/linux-x64": "5.2.0",
+    "@mojs/core": "1.7.1",
+    "@remotion/cli": "4.0.547",
+    "@remotion/gsap": "4.0.547",
+    "@remotion/three": "4.0.547",
+    "@sparticuz/chromium": "158.0.0",
+    "animejs": "4.5.0",
+    "ffmpeg-skill": "4.12.0",
+    "gsap": "3.15.1",
+    "hyperframes": "0.9.100",
+    "remotion": "4.0.547",
+    "roughjs": "4.6.6",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "skills": "1.9.0"
+  }
+}

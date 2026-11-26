@@ -1,0 +1,177 @@
+{
+  "language": "en",
+  "direction": "ltr",
+  "audio": "audio/clean.wav",
+  "duration": 10.4,
+  "fps": 30,
+  "align_model": "WAV2VEC2_ASR_BASE_960H",
+  "asr_model": "large-v3",
+  "source_text": "config/copy.en.json",
+  "lines": [
+    {
+      "index": 0,
+      "text": "One idea becomes a finished reel",
+      "start": 0.2,
+      "end": 3.1
+    },
+    {
+      "index": 1,
+      "text": "Every word gets its own moment",
+      "start": 3.3,
+      "end": 6.2
+    },
+    {
+      "index": 2,
+      "text": "And everything lands in one file",
+      "start": 6.4,
+      "end": 9.2
+    }
+  ],
+  "words": [
+    {
+      "display": "One",
+      "align": "One",
+      "start": 0.2,
+      "end": 0.54,
+      "score": 0.95,
+      "line": 0
+    },
+    {
+      "display": "idea",
+      "align": "idea",
+      "start": 0.58,
+      "end": 0.98,
+      "score": 0.94,
+      "line": 0
+    },
+    {
+      "display": "becomes",
+      "align": "becomes",
+      "start": 1.02,
+      "end": 1.56,
+      "score": 0.93,
+      "line": 0
+    },
+    {
+      "display": "a",
+      "align": "a",
+      "start": 1.6,
+      "end": 1.72,
+      "score": 0.92,
+      "line": 0
+    },
+    {
+      "display": "finished",
+      "align": "finished",
+      "start": 1.76,
+      "end": 2.34,
+      "score": 0.91,
+      "line": 0
+    },
+    {
+      "display": "reel",
+      "align": "reel",
+      "start": 2.38,
+      "end": 3.1,
+      "score": 0.9,
+      "line": 0
+    },
+    {
+      "display": "Every",
+      "align": "Every",
+      "start": 3.3,
+      "end": 3.7,
+      "score": 0.94,
+      "line": 1
+    },
+    {
+      "display": "word",
+      "align": "word",
+      "start": 3.74,
+      "end": 4.1,
+      "score": 0.93,
+      "line": 1
+    },
+    {
+      "display": "gets",
+      "align": "gets",
+      "start": 4.14,
+      "end": 4.48,
+      "score": 0.92,
+      "line": 1
+    },
+    {
+      "display": "its",
+      "align": "its",
+      "start": 4.52,
+      "end": 4.74,
+      "score": 0.91,
+      "line": 1
+    },
+    {
+      "display": "own",
+      "align": "own",
+      "start": 4.78,
+      "end": 5.08,
+      "score": 0.9,
+      "line": 1
+    },
+    {
+      "display": "moment",
+      "align": "moment",
+      "start": 5.12,
+      "end": 6.2,
+      "score": 0.89,
+      "line": 1
+    },
+    {
+      "display": "And",
+      "align": "And",
+      "start": 6.4,
+      "end": 6.76,
+      "score": 0.93,
+      "line": 2
+    },
+    {
+      "display": "everything",
+      "align": "everything",
+      "start": 6.8,
+      "end": 7.44,
+      "score": 0.92,
+      "line": 2
+    },
+    {
+      "display": "lands",
+      "align": "lands",
+      "start": 7.48,
+      "end": 7.92,
+      "score": 0.91,
+      "line": 2
+    },
+    {
+      "display": "in",
+      "align": "in",
+      "start": 7.96,
+      "end": 8.14,
+      "score": 0.9,
+      "line": 2
+    },
+    {
+      "display": "one",
+      "align": "one",
+      "start": 8.18,
+      "end": 8.52,
+      "score": 0.9,
+      "line": 2
+    },
+    {
+      "display": "file",
+      "align": "file",
+      "start": 8.56,
+      "end": 9.2,
+      "score": 0.89,
+      "line": 2
+    }
+  ],
+  "unverified": []
+}

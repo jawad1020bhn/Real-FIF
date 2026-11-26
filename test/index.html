@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Keyless Reel Harness — Test Dashboard</title>
+<style>
+:root{--bg:#07070a;--panel:#111117;--ink:#f5f5f7;--muted:#9c9ca6;--accent:#d9a84e;--ok:#3ddc97;--warn:#ffcc66;--line:#262630}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}
+header{padding:28px 6vw 22px;border-bottom:1px solid var(--line);background:linear-gradient(180deg,#14141b,#07070a)}
+h1{margin:0 0 6px;font-size:28px;letter-spacing:-.02em}
+.sub{color:var(--muted);margin:0}
+main{max-width:1180px;margin:0 auto;padding:26px 6vw 60px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0 28px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card .label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em}
+.card .value{font-size:22px;font-weight:700;margin-top:4px}
+.ok{color:var(--ok)}.warn{color:var(--warn)}
+h2{margin:34px 0 12px;font-size:21px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:18px}
+video{width:100%;max-height:420px;background:#000;border-radius:12px;border:1px solid var(--line)}
+img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+pre{background:#0d0d12;border:1px solid var(--line);border-radius:12px;padding:14px;overflow:auto;color:#d7d7df;font-size:13px}
+ul{padding-left:20px}li{margin:5px 0}
+.badge{display:inline-block;padding:2px 9px;border-radius:999px;border:1px solid var(--line);font-size:12px;color:var(--muted);margin-right:6px}
+footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding:18px 6vw 36px;margin-top:40px}
+[dir="rtl"]{text-align:right}
+</style>
+</head>
+<body>
+<header>
+  <h1>Keyless Reel Harness — Test Dashboard</h1>
+  <p class="sub">Bilingual <code>ar</code>/<code>en</code> Stack E · HyperFrames + FFmpeg + WhisperX/Auto-Editor · no API keys · drafts only</p>
+</header>
+<main>
+  <div class="grid">
+    <div class="card"><div class="label">Doctor</div><div class="value ok">core_ok = true</div></div>
+    <div class="card"><div class="label">Arabic QA</div><div class="value ok">24 / 24</div></div>
+    <div class="card"><div class="label">English QA</div><div class="value ok">23 / 23</div></div>
+    <div class="card"><div class="label">HyperFrames check</div><div class="value ok">0 issues</div></div>
+    <div class="card"><div class="label">Model weights</div><div class="value warn">offline path</div></div>
+    <div class="card"><div class="label">Publishing</div><div class="value">never</div></div>
+  </div>
+
+  <h2>Start here</h2>
+  <div class="card">
+    <span class="badge">README</span><a href="../README.md">Harness overview</a> ·
+    <span class="badge">INSTALL</span><a href="../docs/INSTALL.md">Exact sandbox results</a> ·
+    <span class="badge">TESTING</span><a href="../docs/TESTING.md">Full acceptance checklist</a> ·
+    <span class="badge">ARCH</span><a href="../docs/ARCHITECTURE.md">Pipeline design</a> ·
+    <span class="badge">SKILLS</span><a href="../docs/SKILLS.md">Skills &amp; security</a> ·
+    <span class="badge">PROMPTS</span><a href="../prompts/README.md">High-quality prompts</a> ·
+    <span class="badge">MODELS</span><a href="../models/README.md">Model cache notes</a>
+  </div>
+
+  <h2>Regenerate the smoke tests</h2>
+  <pre><code>npm run doctor
+npm run reel -- --lang ar --project videos/_template/ar-smoke --demo --offline --fps 12 --out out/ar-smoke.mp4
+npm run reel -- --lang en --project videos/_template/en-smoke --demo --offline --fps 12 --out out/en-smoke.mp4
+npm run check -- --project videos/_template/ar-smoke
+npm run check -- --project videos/_template/en-smoke</code></pre>
+  <p class="sub">Omit <code>--fps 12</code> for the production default of 30 fps. Generated MP4s, contact sheets, QA reports, and <code>*-smoke/</code> folders are git-ignored; run the commands above if a media link below is missing.</p>
+
+  <h2>Arabic — strict RTL</h2>
+  <div class="cols" dir="rtl">
+    <div class="card">
+      <p><span class="badge">Video</span><a href="../out/ar-smoke.mp4">out/ar-smoke.mp4</a></p>
+      <video controls preload="metadata" src="../out/ar-smoke.mp4"></video>
+      <p class="sub">Full shaped line, active word highlighted inside it, <code>&lt;bdi&gt;</code> for Latin/numbers, RLE/PDF SRT isolation.</p>
+    </div>
+    <div class="card">
+      <p><span class="badge">Contact sheet</span><a href="../videos/_template/ar-smoke/qa/contact-sheet.jpg">ar contact sheet</a></p>
+      <img loading="lazy" src="../videos/_template/ar-smoke/qa/contact-sheet.jpg" alt="Arabic reel contact sheet" />
+      <p><a href="../videos/_template/ar-smoke/qa/report.md">QA report</a> · <a href="../videos/_template/ar-smoke/qa/report.json">QA JSON</a> · <a href="../videos/_template/ar-smoke/reel-state.json">reel-state.json</a></p>
+    </div>
+  </div>
+
+  <h2>English — LTR</h2>
+  <div class="cols" dir="ltr">
+    <div class="card">
+      <p><span class="badge">Video</span><a href="../out/en-smoke.mp4">out/en-smoke.mp4</a></p>
+      <video controls preload="metadata" src="../out/en-smoke.mp4"></video>
+      <p class="sub">Word-timed karaoke line, DejaVu Sans, English alignment config, same one-command pipeline.</p>
+    </div>
+    <div class="card">
+      <p><span class="badge">Contact sheet</span><a href="../videos/_template/en-smoke/qa/contact-sheet.jpg">en contact sheet</a></p>
+      <img loading="lazy" src="../videos/_template/en-smoke/qa/contact-sheet.jpg" alt="English reel contact sheet" />
+      <p><a href="../videos/_template/en-smoke/qa/report.md">QA report</a> · <a href="../videos/_template/en-smoke/qa/report.json">QA JSON</a> · <a href="../videos/_template/en-smoke/reel-state.json">reel-state.json</a></p>
+    </div>
+  </div>
+
+  <h2>What to verify</h2>
+  <ul>
+    <li>Arabic highlight travels right-to-left inside a full shaped line; English travels left-to-right.</li>
+    <li>Hook is readable by 1.5 s; the reel makes sense with sound off.</li>
+    <li>No text under platform UI, no black/frozen/empty frames, no invented numbers.</li>
+    <li>Exactly one audio stream; audio muxed once; loudness near −14 LUFS.</li>
+    <li><code>npm run check</code> reports 0 issues for both projects; <code>npm run doctor</code> is keyless.</li>
+    <li>No API keys, tokens, paid calls, uploads, or publishing. <code>reel-state.json</code> cost stays zero.</li>
+  </ul>
+
+  <h2>Known sandbox limits</h2>
+  <ul>
+    <li>WhisperX / faster-whisper libraries installed, but weight prefetch failed with TLS EOF to <code>huggingface.co</code> and <code>download.pytorch.org</code>. Use <code>--offline</code> / <code>--from-json</code> here.</li>
+    <li>Auto-Editor's release binary download failed; the default clean stage uses FFmpeg <code>silencedetect</code> + <code>loudnorm</code>.</li>
+    <li>Chromium comes from <code>@sparticuz/chromium</code> plus extracted NSS/NSPR libraries; HyperFrames renders worked without a CDN.</li>
+  </ul>
+</main>
+<footer>
+  Live preview uses relative URLs only. Start it with <code>npm run test:serve</code> and open <code>/test/</code>. Draft outputs only.
+</footer>
+</body>
+</html>
