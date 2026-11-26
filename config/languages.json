@@ -1,0 +1,30 @@
+{
+  "ar": {
+    "label": "Arabic",
+    "dir": "rtl",
+    "lang_tag": "ar",
+    "font": "Scheherazade New",
+    "font_file": "assets/fonts/ScheherazadeNew-Bold.ttf",
+    "font_fallback": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "asr_model": "large-v3",
+    "align_model": "jonatasgrosman/wav2vec2-large-xlsr-53-arabic",
+    "align_backend": "huggingface",
+    "strip_tashkeel_for_alignment": true,
+    "caption_px": 84,
+    "direction_note": "right-to-left; whole shaped line, word highlighted inside it"
+  },
+  "en": {
+    "label": "English",
+    "dir": "ltr",
+    "lang_tag": "en",
+    "font": "DejaVu Sans",
+    "font_file": "assets/fonts/DejaVuSans-Bold.ttf",
+    "font_fallback": "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "asr_model": "large-v3",
+    "align_model": "WAV2VEC2_ASR_BASE_960H",
+    "align_backend": "torchaudio",
+    "strip_tashkeel_for_alignment": false,
+    "caption_px": 72,
+    "direction_note": "left-to-right; standard karaoke word highlight"
+  }
+}

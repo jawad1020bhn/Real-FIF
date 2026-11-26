@@ -1,0 +1,68 @@
+<!doctype html>
+<!--
+  Minimal, deterministic RTL karaoke caption block.
+  Drop into a HyperFrames composition (call renderFrame(t) on the Studio clock seek)
+  or port the body to a Remotion component driven by useCurrentFrame().
+  RULES (see Section 9.3 of the research report):
+    1. dir="rtl" + direction:rtl on the WRAPPER — inline-block word spans are bidi-neutral,
+       without it the sentence renders backwards and the highlight walks the wrong way.
+    2. Render the WHOLE shaped line; only recolour the active word inside it. Never render
+       an isolated Arabic word (letters reshape).
+    3. Numbers / Latin tokens inside RTL text go in <bdi>.
+    4. No CSS transitions/animations, no requestAnimationFrame, no Date.now, no Math.random:
+       every visible state must be a pure function of t.
+-->
+<html lang="ar">
+<head>
+<meta charset="utf-8" />
+<style>
+@font-face { font-family: "Scheherazade New"; src: url("assets/fonts/ScheherazadeNew-Bold.ttf"); font-weight: 700; }
+html, body { margin: 0; background: #07070a; }
+#caption {
+  position: absolute; left: 120px; right: 300px; bottom: 680px; /* platform band y 288-1248, x 120-888; narrow right 780 below y 840 */
+  font-family: "Scheherazade New", "Amiri", serif;
+  font-size: 84px; line-height: 1.7; font-weight: 700;
+  text-align: center; color: #f5f5f7;
+  text-shadow: 0 4px 24px rgba(0,0,0,.9);
+  white-space: normal;
+}
+#line { unicode-bidi: isolate; }
+.w { display: inline-block; padding: 0 .06em; border-radius: .18em; }
+.w.active { background: #d9a84e; color: #101014; text-shadow: none; }
+.w.spoken { color: #d9a84e; }
+bdi { direction: ltr; unicode-bidi: isolate; font-family: "JetBrains Mono", monospace; font-size: .78em; }
+</style>
+</head>
+<body>
+<!-- dir + direction on the wrapper is the fix for OpenMontage issue #819 -->
+<div id="caption" dir="rtl" lang="ar" style="direction:rtl">
+  <span id="line">
+    <span class="w" data-i="0" data-start="0.12" data-end="0.48">بِسْمِ</span>
+    <span class="w" data-i="1" data-start="0.50" data-end="1.02">اللَّهِ</span>
+    <span class="w" data-i="2" data-start="1.06" data-end="1.62">نَبْدَأُ</span>
+    <span class="w" data-i="3" data-start="1.66" data-end="2.86">الْعَمَلَ</span>
+  </span>
+</div>
+
+<script>
+// Words come from words.json (display, start, end, score, line, bdi).
+// Example of a mixed RTL/Latin line, built safely with DOM APIs (never innerHTML with ASR text):
+//   const tok = document.createElement('bdi'); tok.textContent = w.display;
+//   line.appendChild(tok);   // prevents the bidi algorithm from reversing numbers
+function renderFrame(t) {
+  document.querySelectorAll('#line .w').forEach(function (el) {
+    var start = parseFloat(el.dataset.start);
+    var end   = parseFloat(el.dataset.end);
+    el.classList.toggle('active', t >= start && t < end);
+    el.classList.toggle('spoken', t >= end);
+  });
+}
+// HyperFrames: register a paused GSAP timeline / Studio clock and call
+//   renderFrame(frame / fps) on every seek.
+// Remotion:  const frame = useCurrentFrame(); const {fps} = useVideoConfig();
+//            useEffect(() => renderFrame(frame / fps), [frame, fps]);
+// Never call renderFrame from requestAnimationFrame — wall clock breaks determinism.
+renderFrame(0);
+</script>
+</body>
+</html>

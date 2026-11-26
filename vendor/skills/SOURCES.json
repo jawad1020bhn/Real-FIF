@@ -1,0 +1,204 @@
+{
+  "pinned_on": "2026-11-25",
+  "policy": "Text-only skill snapshots; no upstream executable code, hooks or MCP servers. Enable one at a time via npm run skills:enable.",
+  "sources": [
+    {
+      "slug": "hyperframes-figma",
+      "repo": "heygen-com/hyperframes",
+      "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+      "path": "skills/figma/SKILL.md",
+      "license": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/figma/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "hyperframes-hyperframes-cli",
+      "repo": "heygen-com/hyperframes",
+      "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+      "path": "skills/hyperframes-cli/SKILL.md",
+      "license": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/hyperframes-cli/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "hyperframes-hyperframes-registry",
+      "repo": "heygen-com/hyperframes",
+      "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+      "path": "skills/hyperframes-registry/SKILL.md",
+      "license": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/hyperframes-registry/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "hyperframes-hyperframes",
+      "repo": "heygen-com/hyperframes",
+      "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+      "path": "skills/hyperframes/SKILL.md",
+      "license": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/hyperframes/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "hyperframes-media-use",
+      "repo": "heygen-com/hyperframes",
+      "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+      "path": "skills/media-use/SKILL.md",
+      "license": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/media-use/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "hyperframes-remotion-to-hyperframes",
+      "repo": "heygen-com/hyperframes",
+      "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+      "path": "skills/remotion-to-hyperframes/SKILL.md",
+      "license": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/remotion-to-hyperframes/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "hyperframes-reverse-any-video",
+      "repo": "heygen-com/hyperframes",
+      "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+      "path": "skills/reverse-any-video/SKILL.md",
+      "license": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/reverse-any-video/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "hyperframes-slideshow",
+      "repo": "heygen-com/hyperframes",
+      "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+      "path": "skills/slideshow/SKILL.md",
+      "license": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/slideshow/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "hyperframes-style-sampling",
+      "repo": "heygen-com/hyperframes",
+      "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+      "path": "skills/style-sampling/SKILL.md",
+      "license": "Apache-2.0",
+      "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/style-sampling/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "ffmpeg-skill-ffmpeg-skill",
+      "repo": "kajisho5/ffmpeg-skill",
+      "commit": "6b07d9fb69ca24522027eb9c8fb6562e629ab667",
+      "path": "skills/ffmpeg-skill/SKILL.md",
+      "license": "MIT",
+      "url": "https://github.com/kajisho5/ffmpeg-skill/blob/6b07d9fb69ca24522027eb9c8fb6562e629ab667/skills/ffmpeg-skill/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "skills-remotion-best-practices",
+      "repo": "remotion-dev/skills",
+      "commit": "a3f4098a2afd0e13f6a6f8c8760e275f75457ea9",
+      "path": "skills/remotion-best-practices/SKILL.md",
+      "license": "NONE",
+      "url": "https://github.com/remotion-dev/skills/blob/a3f4098a2afd0e13f6a6f8c8760e275f75457ea9/skills/remotion-best-practices/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "skills-remotion-captions",
+      "repo": "remotion-dev/skills",
+      "commit": "a3f4098a2afd0e13f6a6f8c8760e275f75457ea9",
+      "path": "skills/remotion-captions/SKILL.md",
+      "license": "NONE",
+      "url": "https://github.com/remotion-dev/skills/blob/a3f4098a2afd0e13f6a6f8c8760e275f75457ea9/skills/remotion-captions/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "skills-remotion-render",
+      "repo": "remotion-dev/skills",
+      "commit": "a3f4098a2afd0e13f6a6f8c8760e275f75457ea9",
+      "path": "skills/remotion-render/SKILL.md",
+      "license": "NONE",
+      "url": "https://github.com/remotion-dev/skills/blob/a3f4098a2afd0e13f6a6f8c8760e275f75457ea9/skills/remotion-render/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "skills-remotion-license",
+      "repo": "remotion-dev/skills",
+      "commit": "a3f4098a2afd0e13f6a6f8c8760e275f75457ea9",
+      "path": "skills/remotion-license/SKILL.md",
+      "license": "NONE",
+      "url": "https://github.com/remotion-dev/skills/blob/a3f4098a2afd0e13f6a6f8c8760e275f75457ea9/skills/remotion-license/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "motion-design-skill-motion-design",
+      "repo": "LottieFiles/motion-design-skill",
+      "commit": "d77a9fc8cb371cab1ba5420df5bfd232cd14c9bb",
+      "path": "skills/motion-design/SKILL.md",
+      "license": "MIT",
+      "url": "https://github.com/LottieFiles/motion-design-skill/blob/d77a9fc8cb371cab1ba5420df5bfd232cd14c9bb/skills/motion-design/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "tiktok-video-skills-short-form-video",
+      "repo": "iart-ai/tiktok-video-skills",
+      "commit": "88e7152fc2710fa16852d013959cfd988a8adc8b",
+      "path": "skills/short-form-video/SKILL.md",
+      "license": "MIT",
+      "url": "https://github.com/iart-ai/tiktok-video-skills/blob/88e7152fc2710fa16852d013959cfd988a8adc8b/skills/short-form-video/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "tiktok-video-skills-caption-animation",
+      "repo": "iart-ai/tiktok-video-skills",
+      "commit": "88e7152fc2710fa16852d013959cfd988a8adc8b",
+      "path": "skills/caption-animation/SKILL.md",
+      "license": "MIT",
+      "url": "https://github.com/iart-ai/tiktok-video-skills/blob/88e7152fc2710fa16852d013959cfd988a8adc8b/skills/caption-animation/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "humanizer",
+      "repo": "blader/humanizer",
+      "commit": "a32f24407364c74c812b43c15926d638bee1e072",
+      "path": "SKILL.md",
+      "license": "MIT",
+      "url": "https://github.com/blader/humanizer/blob/a32f24407364c74c812b43c15926d638bee1e072/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "claude-content-skills-content-factory",
+      "repo": "Ootto-AI/claude-content-skills",
+      "commit": "691875ac3eafaf84ec0bdb0283728c85d2cb3413",
+      "path": "skills/content-factory/SKILL.md",
+      "license": "MIT",
+      "url": "https://github.com/Ootto-AI/claude-content-skills/blob/691875ac3eafaf84ec0bdb0283728c85d2cb3413/skills/content-factory/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "claude-content-skills-reel-builder",
+      "repo": "Ootto-AI/claude-content-skills",
+      "commit": "691875ac3eafaf84ec0bdb0283728c85d2cb3413",
+      "path": "skills/reel-builder/SKILL.md",
+      "license": "MIT",
+      "url": "https://github.com/Ootto-AI/claude-content-skills/blob/691875ac3eafaf84ec0bdb0283728c85d2cb3413/skills/reel-builder/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "claude-content-skills-reel-scripter",
+      "repo": "Ootto-AI/claude-content-skills",
+      "commit": "691875ac3eafaf84ec0bdb0283728c85d2cb3413",
+      "path": "skills/reel-scripter/SKILL.md",
+      "license": "MIT",
+      "url": "https://github.com/Ootto-AI/claude-content-skills/blob/691875ac3eafaf84ec0bdb0283728c85d2cb3413/skills/reel-scripter/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    },
+    {
+      "slug": "claude-content-skills-caption-and-hashtags",
+      "repo": "Ootto-AI/claude-content-skills",
+      "commit": "691875ac3eafaf84ec0bdb0283728c85d2cb3413",
+      "path": "skills/caption-and-hashtags/SKILL.md",
+      "license": "MIT",
+      "url": "https://github.com/Ootto-AI/claude-content-skills/blob/691875ac3eafaf84ec0bdb0283728c85d2cb3413/skills/caption-and-hashtags/SKILL.md",
+      "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "project": "my-first-reel",
+  "lang": "ar",
+  "direction": "rtl",
+  "stage": 0,
+  "completed": false,
+  "goal": "saves",
+  "facts": [],
+  "hook": {
+    "chosen": "",
+    "alternatives": []
+  },
+  "mode": {
+    "offline": true,
+    "alignBackend": "from-json",
+    "renderBackend": "auto",
+    "cachedModels": false,
+    "keyless": true
+  },
+  "paths": {
+    "input": "input/input.mp3",
+    "audio": "audio/clean.wav",
+    "edits": "audio/edits.json",
+    "words": "words.json",
+    "captions": "captions.srt",
+    "composition": "index.html",
+    "manifest": "hyperframes.json",
+    "render": "out/reel.mp4",
+    "renderInfo": "render.json",
+    "qa": "qa/report.md",
+    "contactSheet": "qa/contact-sheet.jpg",
+    "state": "reel-state.json"
+  },
+  "approvals": {
+    "install": false,
+    "brief": false,
+    "storyboard": false,
+    "publish": false,
+    "paid_calls": false
+  },
+  "qa": {
+    "status": "pending",
+    "passes": 0,
+    "warnings": 0
+  },
+  "cost": {
+    "api_calls": [],
+    "credits_spent": 0
+  },
+  "stages": []
+}

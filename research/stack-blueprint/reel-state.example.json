@@ -1,0 +1,149 @@
+{
+  "_comment": "Example handoff state for the reel-orchestrator skill. Copy into videos/<project>/reel-state.json. Paths are relative to that project directory.",
+  "project": "data-story-reel",
+  "created": "2026-11-25",
+  "stage": 3,
+  "goal": "saves",
+  "platform": [
+    "instagram-reels",
+    "youtube-shorts"
+  ],
+  "format": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "duration_s": 30
+  },
+  "facts": [
+    {
+      "claim": "12,480 clips",
+      "source": "config/facts.json"
+    },
+    {
+      "claim": "36 templates",
+      "source": "config/facts.json"
+    },
+    {
+      "claim": "9 formats",
+      "source": "config/facts.json"
+    },
+    {
+      "claim": "12,480 captions",
+      "source": "config/facts.json"
+    },
+    {
+      "claim": "Alpha 91, Beta 89, Gamma 84",
+      "source": "config/facts.json"
+    }
+  ],
+  "references": [
+    {
+      "type": "reel",
+      "url": "",
+      "teardown": "brief.md#reference-1"
+    }
+  ],
+  "hook": {
+    "chosen": "One pipeline. 12,480 captions.",
+    "alternatives": [
+      "12,480 clips, one timeline.",
+      "What happens when code writes the edit?"
+    ],
+    "checklist": {
+      "lands_in_1_5s": true,
+      "works_on_mute": true,
+      "no_invented_numbers": true
+    }
+  },
+  "script": {
+    "path": "script.json",
+    "duration_s": 30,
+    "words": 78,
+    "humanized": true
+  },
+  "look": {
+    "name": "editorial-kinetic",
+    "source": "lemo-opuscar style card",
+    "palette": "#0B0B0B/#F5F5F5/#E10600"
+  },
+  "beats": [
+    {
+      "t0": 0.0,
+      "t1": 3.0,
+      "visual": "hook: big number 12,480 snaps in",
+      "caption": "One pipeline. 12,480 captions.",
+      "sfx": "tick"
+    },
+    {
+      "t0": 3.0,
+      "t1": 9.0,
+      "visual": "counter 0 -> 12,480 clips",
+      "caption": "12,480 clips",
+      "fact": "config/facts.json"
+    },
+    {
+      "t0": 9.0,
+      "t1": 15.0,
+      "visual": "grid of 36 template tiles",
+      "caption": "36 templates",
+      "fact": "config/facts.json"
+    },
+    {
+      "t0": 15.0,
+      "t1": 21.0,
+      "visual": "3 score cards: 91 / 89 / 84",
+      "caption": "Alpha 91 — Beta 89 — Gamma 84",
+      "fact": "config/facts.json"
+    },
+    {
+      "t0": 21.0,
+      "t1": 27.0,
+      "visual": "schema ribbon: raw audio -> finished reel",
+      "caption": "One clock, one render"
+    },
+    {
+      "t0": 27.0,
+      "t1": 30.0,
+      "visual": "end card + repo name",
+      "caption": "the reel harness - link in bio",
+      "cta": "star the repo"
+    }
+  ],
+  "paths": {
+    "brief": "brief.md",
+    "script": "script.json",
+    "storyboard": "storyboard.json",
+    "composition": "composition/index.html",
+    "audio": "assets/music.wav",
+    "captions": "captions.srt",
+    "render": "renders/data-story-reel.mp4",
+    "contact_sheet": "qa/contact-sheet.jpg",
+    "qa": "qa/report.md"
+  },
+  "approvals": {
+    "brief": true,
+    "hook": true,
+    "storyboard": false,
+    "paid_calls": false,
+    "publish": false
+  },
+  "qa": {
+    "status": "pending",
+    "passes": 0,
+    "checks": {}
+  },
+  "package": {
+    "caption": "",
+    "hashtags": [],
+    "cover_frame": ""
+  },
+  "learn": {
+    "views": null,
+    "saves": null,
+    "hook_bank": "winners.md"
+  },
+  "cost": {
+    "api_calls": [],
+    "credits_spent": 0
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "slug": "skills-remotion-captions",
+  "repo": "remotion-dev/skills",
+  "commit": "a3f4098a2afd0e13f6a6f8c8760e275f75457ea9",
+  "path": "skills/remotion-captions/SKILL.md",
+  "license": "NONE",
+  "url": "https://github.com/remotion-dev/skills/blob/a3f4098a2afd0e13f6a6f8c8760e275f75457ea9/skills/remotion-captions/SKILL.md",
+  "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+}

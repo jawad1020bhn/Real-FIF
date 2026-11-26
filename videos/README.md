@@ -1,54 +1,58 @@
-# Videos — made with HyperFrames
+# Videos — harness projects
 
-[HyperFrames](https://github.com/heygen-com/hyperframes) (HeyGen, Apache 2.0) —
-write HTML/CSS/GSAP, render deterministic MP4 with headless Chrome + FFmpeg.
+This folder contains generated reel projects, a reusable scaffold, and one retained reference example. The generic harness creates and renders projects from the repository root; see the root `README.md`.
 
-## Install
+## Projects
 
-Requirements: Node.js 22+ and FFmpeg (`ffmpeg` + `ffprobe` on PATH), plus Chrome/Chromium.
+| Path | Role |
+|---|---|
+| `videos/_template/` | Scaffold for new projects. `input/` is for user audio; generated `*-smoke/` projects are ignored. |
+| `videos/quran-reel-ash-sharh/` | Reference example for Arabic RTL typography, full tashkeel, deterministic GSAP timelines, offline assets, and mastered recitation audio. Do not edit it for new reels. |
 
-```bash
-# CLI (no global install needed — npx fetches hyperframes@0.9.94, verified here)
-npx hyperframes --version
+Old binary/database/promo assets were removed during the generic cleanup. Rendered MP4s and generated per-project QA/audio/frames are build artifacts and are excluded from Git.
 
-# Agent skills / plugin (Claude Code, Codex, Cursor, …)
-npx skills add heygen-com/hyperframes
-# …or, inside a project:
-npx hyperframes skills update
-npx hyperframes browser ensure   # downloads chrome-headless-shell
-npx hyperframes doctor           # checks Node / FFmpeg / Chrome
-```
+## Create a reel
 
-> Sandbox note (this environment): apt and Chrome's download CDN are blocked, so the
-> toolchain was assembled from allowed registries only — CLI via npm, FFmpeg via the
-> PyPI `imageio-ffmpeg` wheel, `ffprobe` built from the FFmpeg git mirror, Chromium via
-> the npm `@sparticuz/chromium` package with NSS/NSPR libraries built from the
-> mozilla/nss + mozilla/nspr git mirrors, wired in through
-> `HYPERFRAMES_BROWSER_PATH`, `HYPERFRAMES_FFMPEG_PATH`, `HYPERFRAMES_FFPROBE_PATH`
-> and `LD_LIBRARY_PATH`. On a normal machine the four commands above are all you need.
-
-## Projects here
-
-| Project | Output | Spec |
-|---|---|---|
-| `real-fif-promo/` | `renders/real-fif-promo.mp4` | 1920×1080, 30 fps, 20 s, H.264 + AAC |
-| `real-fif-short/` | `renders/real-fif-short.mp4` | 1080×1920 (9:16), 30 fps, 12 s, H.264 + AAC |
-
-Both are promos for this repo's FC 27 roster update for FIFA 14. All numbers on
-screen come from the top-level `README.md` (25,305 players, 922 teams, 55 leagues,
-43,066 names; spot-checked OVRs Mbappé 91, Messi 89, Ronaldo 84). Background audio
-is a deterministic FFmpeg-synthesised pad/beat (`assets/music.wav`), GSAP is
-vendored in `assets/` so compositions render offline.
-
-## Edit / re-render
+From the repository root:
 
 ```bash
-cd real-fif-promo            # or real-fif-short
-npm run dev                  # live Studio preview in the browser
-npm run check                # lint / runtime / layout / audio checks (ok: true)
-npx hyperframes snapshot --at 1,7,12,17   # frame grabs for review
-npm run render               # -> renders/*.mp4
+npm run reel -- --lang ar --project videos/my-ar-reel --demo --offline
+npm run reel -- --lang en --project videos/my-en-reel --demo --offline
+npm run check -- --project videos/my-ar-reel
 ```
 
-Edit `index.html` (scene timings are the `data-start`/`data-duration` attributes
-and the GSAP timeline at the bottom) and re-render — output is deterministic.
+Replace `--demo` with `--input /path/to/voice.wav` for real audio. `--offline` uses reviewed `config/words.<lang>.example.json` timings because Hugging Face model weights are not cached in this sandbox. Once weights are available, use `--align-backend whisperx` or `faster-whisper`.
+
+## Project anatomy
+
+```text
+<project>/
+  input/                user audio (or generated demo WAV)
+  audio/clean.wav       silence-cut, loudness-normalised audio
+  audio/edits.json      cut ranges + remap contract
+  words.json            reviewed word timings
+  captions.srt          subtitles
+  index.html            generated HyperFrames composition
+  hyperframes.json      composition manifest
+  assets/               vendored GSAP, fonts, font licences, local audio.wav
+  render.json           renderer backend + output metadata
+  qa/report.md          human QA report
+  qa/contact-sheet.jpg  sampled frames from the actual MP4
+  reel-state.json       stage, paths, approvals, QA, cost
+```
+
+The renderer is HyperFrames `0.9.100` with headless Chromium supplied by `@sparticuz/chromium`; local FFmpeg/ffprobe come from pinned npm installers. A Pillow frame renderer is available as a Chrome-less fallback. All assets are local, so renders are deterministic and keyless.
+
+## Reference example
+
+`videos/quran-reel-ash-sharh/` keeps its original rendered MP4s, eight scene illustrations, recitation audio, Scheherazade New / Amiri fonts, and SIL OFL licence files. It is documentation, not an input to the generic pipeline. Qur'anic recitation should use reviewed text and manual boundaries; generic forced alignment is unreliable for full tashkeel and tajwid.
+
+## Verification
+
+```bash
+npm run doctor
+npm run check -- --project videos/my-ar-reel
+npm run qa -- --project videos/my-ar-reel --out out/reel-ar.mp4 --lang ar
+```
+
+No API keys, no paid calls, no publishing. Outputs are drafts only.

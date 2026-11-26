@@ -1,0 +1,9 @@
+<!-- Reference RTL/LTR karaoke caption block. compose.mjs generates caption states from words.json.
+     Rules: dir + direction on the WRAPPER; render the whole shaped line; highlight the active word
+     INSIDE the line; wrap numbers/Latin tokens in <bdi>; no CSS transitions, no wall clock. -->
+<div id="caption" dir="@@DIR@@" lang="@@LANG@@" style="direction:@@DIR@@">
+  <div class="caption-state" id="cap-0">
+    <span class="w active">بِسْمِ</span> <span class="w">اللَّهِ</span>
+    <bdi>1,280</bdi>
+  </div>
+</div>
