@@ -1,0 +1,9 @@
+{
+  "slug": "ffmpeg-skill-ffmpeg-skill",
+  "repo": "kajisho5/ffmpeg-skill",
+  "commit": "6b07d9fb69ca24522027eb9c8fb6562e629ab667",
+  "path": "skills/ffmpeg-skill/SKILL.md",
+  "license": "MIT",
+  "url": "https://github.com/kajisho5/ffmpeg-skill/blob/6b07d9fb69ca24522027eb9c8fb6562e629ab667/skills/ffmpeg-skill/SKILL.md",
+  "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+}

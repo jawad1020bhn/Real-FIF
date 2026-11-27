@@ -1,0 +1,78 @@
+<template id="s-rough-template">
+<div id="root" data-composition-id="s-rough" data-width="1080" data-height="1920" data-duration="8.000">
+  <div class="grid" data-layout-allow-overflow></div><div class="vignette" data-layout-allow-overflow></div>
+  <div class="tag" data-layout-allow-overlap data-layout-allow-safe-zone>ROUGH.JS + THREE.JS</div>
+  <h1 class="headline" data-layout-allow-overlap data-layout-allow-safe-zone>PIPELINE / WIREFRAME</h1>
+  <p class="subhead" data-layout-allow-overlap data-layout-allow-safe-zone>PAUSED TIMELINES · LOCAL ASSETS · NO CLOUD</p>
+<script src="assets/rough.js"></script>
+  <canvas id="sketch" data-layout-ignore width="840" height="260" style="position:absolute;left:120px;top:720px"></canvas>
+  <canvas id="three-canvas" data-layout-ignore width="840" height="420" style="position:absolute;left:120px;top:1450px"></canvas>
+  <div class="card" data-layout-allow-overlap id="rt" style="left:120px;top:800px;width:840px;text-align:center;display:none" data-layout-allow-safe-zone>Rough.js pipeline + Three.js wireframe</div>
+  <style>
+@font-face{font-family:"ReelLatin";src:url("assets/fonts/DejaVuSans-Bold.ttf") format("truetype");font-weight:700;font-display:block;}
+@font-face{font-family:"ReelArabic";src:url("assets/fonts/ScheherazadeNew-Bold.ttf") format("truetype");font-weight:700;font-display:block;}
+@font-face{font-family:"ReelAmiri";src:url("assets/fonts/Amiri-Regular.ttf") format("truetype");font-weight:400;font-display:block;}
+
+#root{position:absolute;inset:0;overflow:hidden;background:#07070A;color:#F5F5F7;font-family:"ReelLatin",sans-serif;direction:ltr;opacity:0;}
+[data-hf-inner-root="true"]{opacity:1 !important;}
+.grid{position:absolute;inset:0;opacity:.25;background-image:linear-gradient(rgba(217,168,78,.10) 1px,transparent 1px),linear-gradient(90deg,rgba(217,168,78,.10) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(180deg,rgba(0,0,0,.9),rgba(0,0,0,.15));}
+.tag,.headline,.subhead,.node,.card,.clip{opacity:0;}
+.vignette{position:absolute;inset:0;box-shadow:inset 0 0 260px rgba(0,0,0,.88);pointer-events:none;}
+.kicker{position:absolute;left:120px;right:120px;top:330px;font-size:30px;line-height:1.2;letter-spacing:.20em;color:#F3D489;text-transform:uppercase;text-align:center;}
+.headline{position:absolute;left:120px;right:120px;top:360px;font-size:86px;line-height:1.03;font-weight:700;color:#fff;text-align:center;text-wrap:balance;text-shadow:0 8px 44px rgba(0,0,0,.95);}
+.subhead{position:absolute;left:120px;right:120px;top:610px;font-size:34px;line-height:1.35;color:#D1CBC0;text-align:center;text-shadow:0 5px 28px rgba(0,0,0,.95);}
+.tag{position:absolute;left:120px;right:120px;top:260px;font-size:28px;letter-spacing:.18em;color:#D9A84E;text-align:center;text-transform:uppercase;}
+.card{position:absolute;background:rgba(16,18,24,.88);border:1px solid rgba(217,168,78,.52);border-radius:26px;padding:24px 26px;font-size:30px;color:#F1E8D5;box-shadow:0 18px 60px rgba(0,0,0,.45);}
+.node{position:absolute;width:220px;padding:18px;border:2px solid #D9A84E;border-radius:22px;background:rgba(9,11,16,.9);font-size:28px;text-align:center;color:#F3D489;}
+.bar{position:absolute;left:120px;right:120px;top:920px;height:8px;background:rgba(255,255,255,.14);overflow:hidden;}
+.bar-fill{height:100%;width:100%;background:linear-gradient(90deg,#D9A84E,#F3D489);transform:scaleX(0);transform-origin:left center;}
+.motion-line{position:absolute;left:120px;right:120px;top:820px;height:2px;background:rgba(217,168,78,.35);}
+
+#sketch,#three-canvas{background:rgba(9,11,16,.55);border:1px solid rgba(217,168,78,.35);border-radius:26px;}
+  </style>
+  <script>
+  (function(){
+const tl = gsap.timeline({paused:true});
+tl.fromTo('[data-composition-id="s-rough"]',{opacity:0},{opacity:1,duration:.35,ease:'power2.out'},0);
+tl.fromTo('.grid',{opacity:.25,scale:1.02},{opacity:.88,scale:1,duration:1.1,ease:'power2.out'},0);
+tl.fromTo('.tag',{opacity:0,y:-18},{opacity:1,y:0,duration:.55,ease:'power3.out'},0.12);
+tl.fromTo('.headline',{opacity:0,y:42},{opacity:1,y:0,duration:.75,ease:'power3.out'},0.22);
+tl.fromTo('.subhead',{opacity:0,y:24},{opacity:1,y:0,duration:.6,ease:'power3.out'},0.48);
+tl.to('[data-composition-id="s-rough"]',{opacity:0,duration:.30,ease:'power1.in'},7.700);
+tl.set({}, {}, 8.000);
+window.__timelines = window.__timelines || {};
+window.__timelines['s-rough'] = tl;
+const rc = rough.canvas(document.getElementById('sketch'),{seed:7});
+rc.rectangle(40,30,210,85,{stroke:'#D9A84E',strokeWidth:3,roughness:1.6});
+rc.rectangle(310,30,210,85,{stroke:'#F3D489',strokeWidth:3,roughness:1.6});
+rc.rectangle(580,30,210,85,{stroke:'#F5F5F7',strokeWidth:3,roughness:1.6});
+rc.line(250,72,310,72,{stroke:'#F3D489',strokeWidth:4,roughness:2});
+rc.line(520,72,580,72,{stroke:'#F3D489',strokeWidth:4,roughness:2});
+rc.circle(420,190,48,{stroke:'#D9A84E',strokeWidth:3,roughness:2});
+tl.fromTo('#sketch',{opacity:0,y:24},{opacity:1,y:0,duration:.6,ease:'power3.out'},.8);
+tl.fromTo('#rt',{opacity:0,y:-16},{opacity:1,y:0,duration:.5,ease:'power3.out'},.6);
+
+  })();
+  </script>
+<script type="module">
+
+import * as THREE from './assets/three.module.js';
+const canvas = document.getElementById('three-canvas');
+const renderer = new THREE.WebGLRenderer({canvas, alpha:true, antialias:true});
+renderer.setSize(840,420,false);
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(45,840/420,0.1,100);
+camera.position.z=5;
+const mesh = new THREE.Mesh(new THREE.IcosahedronGeometry(1.25,1), new THREE.MeshBasicMaterial({color:0xD9A84E,wireframe:true}));
+scene.add(mesh);
+const edges = new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.TorusGeometry(1.7,.04,8,80)), new THREE.LineBasicMaterial({color:0xF3D489}));
+scene.add(edges);
+const state={a:0};
+const tl3 = gsap.timeline({paused:true});
+tl3.to(state,{a:Math.PI*2,duration:8.000,ease:'none',onUpdate:()=>{mesh.rotation.set(state.a*.6,state.a,state.a*.2);edges.rotation.set(-state.a*.3,state.a*.7,0);renderer.render(scene,camera);}},0);
+renderer.render(scene,camera);
+const hostTl=window.__timelines['s-rough']; if(hostTl) hostTl.add(tl3,0);
+
+</script>
+</div>
+</template>

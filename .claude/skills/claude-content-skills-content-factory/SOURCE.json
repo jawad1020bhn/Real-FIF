@@ -1,0 +1,9 @@
+{
+  "slug": "claude-content-skills-content-factory",
+  "repo": "Ootto-AI/claude-content-skills",
+  "commit": "691875ac3eafaf84ec0bdb0283728c85d2cb3413",
+  "path": "skills/content-factory/SKILL.md",
+  "license": "MIT",
+  "url": "https://github.com/Ootto-AI/claude-content-skills/blob/691875ac3eafaf84ec0bdb0283728c85d2cb3413/skills/content-factory/SKILL.md",
+  "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+}

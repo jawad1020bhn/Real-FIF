@@ -1,0 +1,664 @@
+{
+  "language": "en",
+  "direction": "ltr",
+  "audio": "audio/clean.wav",
+  "duration": 45.0,
+  "fps": 30,
+  "align_model": "WAV2VEC2_ASR_BASE_960H",
+  "asr_model": "large-v3",
+  "source_text": "config/copy.en.json",
+  "lines": [
+    {
+      "index": 0,
+      "text": "Meet the reel harness. Audio first: silence trimmed, loudness tamed, reviewed words timed offline. Auto-Editor and WhisperX are installed, but model fetches stay off.",
+      "start": 0.4,
+      "end": 10.1
+    },
+    {
+      "index": 1,
+      "text": "Composition is code. HyperFrames mounts scenes; GSAP drives paused timelines. anime.js, mo.js, Rough.js, and Three.js animate cards, bursts, sketches, and wireframes.",
+      "start": 10.3,
+      "end": 27.3
+    },
+    {
+      "index": 2,
+      "text": "Remotion renders a clip; FFmpeg stitches it. Strict checks, QA, Pillow, Arabic shaping, soundfile, numpy, and skills audit stay local. Keyless. Offline. Run it again.",
+      "start": 27.5,
+      "end": 39.2
+    }
+  ],
+  "words": [
+    {
+      "display": "Meet",
+      "align": "Meet",
+      "start": 0.4,
+      "end": 0.804,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "the",
+      "align": "the",
+      "start": 0.804,
+      "end": 1.208,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "reel",
+      "align": "reel",
+      "start": 1.208,
+      "end": 1.612,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "harness.",
+      "align": "harness.",
+      "start": 1.612,
+      "end": 2.017,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "Audio",
+      "align": "Audio",
+      "start": 2.017,
+      "end": 2.421,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "first:",
+      "align": "first:",
+      "start": 2.421,
+      "end": 2.825,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "silence",
+      "align": "silence",
+      "start": 2.825,
+      "end": 3.229,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "trimmed,",
+      "align": "trimmed,",
+      "start": 3.229,
+      "end": 3.633,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "loudness",
+      "align": "loudness",
+      "start": 3.633,
+      "end": 4.037,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "tamed,",
+      "align": "tamed,",
+      "start": 4.037,
+      "end": 4.442,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "reviewed",
+      "align": "reviewed",
+      "start": 4.442,
+      "end": 4.846,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "words",
+      "align": "words",
+      "start": 4.846,
+      "end": 5.25,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "timed",
+      "align": "timed",
+      "start": 5.25,
+      "end": 5.654,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "offline.",
+      "align": "offline.",
+      "start": 5.654,
+      "end": 6.058,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "Auto-Editor",
+      "align": "Auto-Editor",
+      "start": 6.058,
+      "end": 6.463,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "and",
+      "align": "and",
+      "start": 6.463,
+      "end": 6.867,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "WhisperX",
+      "align": "WhisperX",
+      "start": 6.867,
+      "end": 7.271,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "are",
+      "align": "are",
+      "start": 7.271,
+      "end": 7.675,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "installed,",
+      "align": "installed,",
+      "start": 7.675,
+      "end": 8.079,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "but",
+      "align": "but",
+      "start": 8.079,
+      "end": 8.483,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "model",
+      "align": "model",
+      "start": 8.483,
+      "end": 8.887,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "fetches",
+      "align": "fetches",
+      "start": 8.887,
+      "end": 9.292,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "stay",
+      "align": "stay",
+      "start": 9.292,
+      "end": 9.696,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "off.",
+      "align": "off.",
+      "start": 9.696,
+      "end": 10.1,
+      "score": 1.0,
+      "line": 0,
+      "bdi": false
+    },
+    {
+      "display": "Composition",
+      "align": "Composition",
+      "start": 10.3,
+      "end": 11.11,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "is",
+      "align": "is",
+      "start": 11.11,
+      "end": 11.919,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "code.",
+      "align": "code.",
+      "start": 11.919,
+      "end": 12.729,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "HyperFrames",
+      "align": "HyperFrames",
+      "start": 12.729,
+      "end": 13.538,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "mounts",
+      "align": "mounts",
+      "start": 13.538,
+      "end": 14.348,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "scenes;",
+      "align": "scenes;",
+      "start": 14.348,
+      "end": 15.157,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "GSAP",
+      "align": "GSAP",
+      "start": 15.157,
+      "end": 15.967,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "drives",
+      "align": "drives",
+      "start": 15.967,
+      "end": 16.776,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "paused",
+      "align": "paused",
+      "start": 16.776,
+      "end": 17.586,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "timelines.",
+      "align": "timelines.",
+      "start": 17.586,
+      "end": 18.395,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "anime.js,",
+      "align": "anime.js,",
+      "start": 18.395,
+      "end": 19.205,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "mo.js,",
+      "align": "mo.js,",
+      "start": 19.205,
+      "end": 20.014,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "Rough.js,",
+      "align": "Rough.js,",
+      "start": 20.014,
+      "end": 20.824,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "and",
+      "align": "and",
+      "start": 20.824,
+      "end": 21.633,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "Three.js",
+      "align": "Three.js",
+      "start": 21.633,
+      "end": 22.443,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "animate",
+      "align": "animate",
+      "start": 22.443,
+      "end": 23.252,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "cards,",
+      "align": "cards,",
+      "start": 23.252,
+      "end": 24.062,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "bursts,",
+      "align": "bursts,",
+      "start": 24.062,
+      "end": 24.871,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "sketches,",
+      "align": "sketches,",
+      "start": 24.871,
+      "end": 25.681,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "and",
+      "align": "and",
+      "start": 25.681,
+      "end": 26.49,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "wireframes.",
+      "align": "wireframes.",
+      "start": 26.49,
+      "end": 27.3,
+      "score": 1.0,
+      "line": 1,
+      "bdi": false
+    },
+    {
+      "display": "Remotion",
+      "align": "Remotion",
+      "start": 27.5,
+      "end": 27.968,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "renders",
+      "align": "renders",
+      "start": 27.968,
+      "end": 28.436,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "a",
+      "align": "a",
+      "start": 28.436,
+      "end": 28.904,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "clip;",
+      "align": "clip;",
+      "start": 28.904,
+      "end": 29.372,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "FFmpeg",
+      "align": "FFmpeg",
+      "start": 29.372,
+      "end": 29.84,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "stitches",
+      "align": "stitches",
+      "start": 29.84,
+      "end": 30.308,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "it.",
+      "align": "it.",
+      "start": 30.308,
+      "end": 30.776,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "Strict",
+      "align": "Strict",
+      "start": 30.776,
+      "end": 31.244,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "checks,",
+      "align": "checks,",
+      "start": 31.244,
+      "end": 31.712,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "QA,",
+      "align": "QA,",
+      "start": 31.712,
+      "end": 32.18,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "Pillow,",
+      "align": "Pillow,",
+      "start": 32.18,
+      "end": 32.648,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "Arabic",
+      "align": "Arabic",
+      "start": 32.648,
+      "end": 33.116,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "shaping,",
+      "align": "shaping,",
+      "start": 33.116,
+      "end": 33.584,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "soundfile,",
+      "align": "soundfile,",
+      "start": 33.584,
+      "end": 34.052,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "numpy,",
+      "align": "numpy,",
+      "start": 34.052,
+      "end": 34.52,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "and",
+      "align": "and",
+      "start": 34.52,
+      "end": 34.988,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "skills",
+      "align": "skills",
+      "start": 34.988,
+      "end": 35.456,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "audit",
+      "align": "audit",
+      "start": 35.456,
+      "end": 35.924,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "stay",
+      "align": "stay",
+      "start": 35.924,
+      "end": 36.392,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "local.",
+      "align": "local.",
+      "start": 36.392,
+      "end": 36.86,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "Keyless.",
+      "align": "Keyless.",
+      "start": 36.86,
+      "end": 37.328,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "Offline.",
+      "align": "Offline.",
+      "start": 37.328,
+      "end": 37.796,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "Run",
+      "align": "Run",
+      "start": 37.796,
+      "end": 38.264,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "it",
+      "align": "it",
+      "start": 38.264,
+      "end": 38.732,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    },
+    {
+      "display": "again.",
+      "align": "again.",
+      "start": 38.732,
+      "end": 39.2,
+      "score": 1.0,
+      "line": 2,
+      "bdi": false
+    }
+  ],
+  "unverified": [],
+  "backend": "from-json (offline, deterministic)"
+}

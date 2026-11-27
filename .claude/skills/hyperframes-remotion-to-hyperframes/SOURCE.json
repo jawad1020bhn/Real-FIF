@@ -1,0 +1,9 @@
+{
+  "slug": "hyperframes-remotion-to-hyperframes",
+  "repo": "heygen-com/hyperframes",
+  "commit": "707fe93ab81302bec4a63901a61664b491c5d168",
+  "path": "skills/remotion-to-hyperframes/SKILL.md",
+  "license": "Apache-2.0",
+  "url": "https://github.com/heygen-com/hyperframes/blob/707fe93ab81302bec4a63901a61664b491c5d168/skills/remotion-to-hyperframes/SKILL.md",
+  "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+}

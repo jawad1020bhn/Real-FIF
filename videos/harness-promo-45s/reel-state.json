@@ -1,0 +1,64 @@
+{
+  "project": "harness-promo-45s",
+  "lang": "en",
+  "direction": "rtl",
+  "stage": 6,
+  "completed": true,
+  "goal": "saves",
+  "facts": [],
+  "hook": {
+    "chosen": "",
+    "alternatives": []
+  },
+  "mode": {
+    "offline": true,
+    "alignBackend": "from-json",
+    "renderBackend": "auto",
+    "cachedModels": false,
+    "keyless": true
+  },
+  "paths": {
+    "input": "videos/harness-promo-45s/assets/narration.wav",
+    "audio": "audio/clean.wav",
+    "words": "words.json",
+    "composition": "index.html",
+    "render": "out/harness-promo-45s.mp4",
+    "qa": "qa/report.md",
+    "state": "reel-state.json"
+  },
+  "approvals": {
+    "install": true,
+    "brief": false,
+    "storyboard": false,
+    "publish": false,
+    "paid_calls": false
+  },
+  "qa": {
+    "status": "pending",
+    "passes": 0
+  },
+  "cost": {
+    "api_calls": [],
+    "credits_spent": 0
+  },
+  "stages": [
+    {
+      "name": "doctor",
+      "number": 0,
+      "ok": true,
+      "command": "node /home/user/Real-FIF/scripts/doctor.mjs"
+    },
+    {
+      "name": "clean",
+      "number": 1,
+      "ok": true,
+      "command": "node /home/user/Real-FIF/scripts/clean.mjs --project /home/user/Real-FIF/videos/harness-promo-45s --input /home/user/Real-FIF/videos/harness-promo-45s/assets/narration.wav --backend ffmpeg"
+    },
+    {
+      "name": "align",
+      "number": 2,
+      "ok": true,
+      "command": "node /home/user/Real-FIF/scripts/align.mjs --lang en --project /home/user/Real-FIF/videos/harness-promo-45s --backend from-json --from-json /home/user/Real-FIF/videos/harness-promo-45s/config/words.source.json"
+    }
+  ]
+}

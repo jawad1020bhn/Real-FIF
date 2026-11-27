@@ -37,7 +37,13 @@ def main():
     words = load(project / "words.json")
     render = load(project / "render.json")
     edits = load(project / "audio" / "edits.json")
-    index = (project / "index.html").read_text(encoding="utf-8") if (project / "index.html").exists() else ""
+    # QA reads the root plus every mounted sub-composition, so modular projects
+    # still get caption, RTL, clock and network-asset checks.
+    html_paths = [project / "index.html"]
+    comp_dir = project / "compositions"
+    if comp_dir.exists():
+        html_paths.extend(sorted(comp_dir.rglob("*.html")))
+    index = "\n".join(p.read_text(encoding="utf-8") for p in html_paths if p.exists())
     srt = (project / "captions.srt").read_text(encoding="utf-8") if (project / "captions.srt").exists() else ""
 
     checks, warnings = [], []

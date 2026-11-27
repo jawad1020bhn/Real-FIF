@@ -1,0 +1,29 @@
+{
+  "$schema": "https://hyperframes.heygen.com/schema/hyperframes.json",
+  "paths": {
+    "blocks": "compositions",
+    "components": "compositions/components",
+    "assets": "assets"
+  },
+  "media": {
+    "autoProxy": true
+  },
+  "name": "harness-promo-45s",
+  "width": 1080,
+  "height": 1920,
+  "fps": 30,
+  "duration": 45.0,
+  "audio": "assets/audio.wav",
+  "language": "en",
+  "direction": "ltr",
+  "renderer": "hyperframes",
+  "entry": "index.html",
+  "offline": true,
+  "facts_source": "config/facts.json",
+  "facts": {
+    "facts": []
+  },
+  "caption_policy": "Reviewed narration only; no ASR rewrite; no invented numbers on screen.",
+  "drafts_only": true,
+  "no_invented_numbers": true
+}

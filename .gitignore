@@ -30,3 +30,26 @@ reel-state.local.json
 # OS
 .DS_Store
 Thumbs.db
+
+# Harness promo: generated audio/state are reproducible; review artifacts are committed.
+videos/harness-promo-45s/assets/*.wav
+videos/harness-promo-45s/audio/*.wav
+videos/harness-promo-45s/render.json
+videos/harness-promo-45s/qa/ffmpeg-skill-contract.json
+videos/harness-promo-45s/qa/snapshot-review/
+videos/harness-promo-45s/.thumbnails/
+videos/harness-promo-45s/.waveform-cache/
+!videos/harness-promo-45s/renders/
+videos/harness-promo-45s/renders/*
+!videos/harness-promo-45s/renders/harness-promo-45s.mp4
+!videos/harness-promo-45s/renders/REVIEW.md
+!videos/harness-promo-45s/qa/
+videos/harness-promo-45s/qa/*
+!videos/harness-promo-45s/qa/report.md
+!videos/harness-promo-45s/qa/contact-sheet.jpg
+!videos/harness-promo-45s/qa/contact-sheet-full.jpg
+!videos/harness-promo-45s/qa/tool-usage.json
+!videos/harness-promo-45s/qa/ffmpeg-skill-doctor.json
+!reports/
+reports/*
+!reports/harness-promo-contact-sheet.jpg
