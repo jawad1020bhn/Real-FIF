@@ -1,0 +1,9 @@
+{
+  "slug": "tiktok-video-skills-short-form-video",
+  "repo": "iart-ai/tiktok-video-skills",
+  "commit": "88e7152fc2710fa16852d013959cfd988a8adc8b",
+  "path": "skills/short-form-video/SKILL.md",
+  "license": "MIT",
+  "url": "https://github.com/iart-ai/tiktok-video-skills/blob/88e7152fc2710fa16852d013959cfd988a8adc8b/skills/short-form-video/SKILL.md",
+  "audit": "SKILL.md text only; upstream scripts, hooks, MCP configs and assets were intentionally NOT vendored."
+}

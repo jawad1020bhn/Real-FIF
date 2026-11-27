@@ -1,0 +1,26 @@
+{
+  "python": {
+    "Pillow": "11.3.0",
+    "numpy": "2.3.3",
+    "soundfile": "0.13.1",
+    "imageio_ffmpeg": "/home/user/Real-FIF/.venv/lib/python3.11/site-packages/imageio_ffmpeg/binaries/ffmpeg-linux-x86_64-v9.0.2",
+    "arabic_reshaper": "installed",
+    "python_bidi": "installed",
+    "auto_editor": "installed",
+    "whisperx": "installed; weights not fetched",
+    "faster_whisper": "1.2.1",
+    "ctranslate2": "4.9.1"
+  },
+  "node": {
+    "hyperframes": "0.9.100",
+    "gsap": "3.15.1",
+    "animejs": "4.5.0",
+    "mojs": "1.7.1",
+    "roughjs": "4.6.6",
+    "three": "0.187.0",
+    "remotion": "4.0.547",
+    "ffmpeg-skill": "4.12.0",
+    "skills": "1.9.0"
+  },
+  "safe_ASR_policy": "Reviewed text only; no model-weight fetches, no transcription rewrite."
+}

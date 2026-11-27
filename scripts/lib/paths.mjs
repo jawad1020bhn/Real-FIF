@@ -63,9 +63,11 @@ export async function chromeBin() {
         const br = path.join(ROOT,'node_modules/@sparticuz/chromium/bin/al2023.tar.br');
         if (fs.existsSync(br)) {
           const tarPath = path.join(ROOT,'vendor/bin/al2023.tar');
+          const extractDir = path.join(ROOT,'vendor/bin/lib');
           ensure(path.dirname(tarPath));
+          ensure(extractDir);
           fs.writeFileSync(tarPath, zlib.brotliDecompressSync(fs.readFileSync(br)));
-          spawnSync('tar',['-xf',tarPath,'-C',path.join(ROOT,'vendor/bin/lib')]);
+          spawnSync('tar',['-xf',tarPath,'-C',extractDir]);
         }
       }
       if (fs.existsSync(path.join(libDir,'libnss3.so'))) {

@@ -23,7 +23,13 @@
     "skills:enable": "node scripts/enable-skill.mjs",
     "skills:audit": "node scripts/enable-skill.mjs --audit",
     "skills:all": "node scripts/enable-skill.mjs --all",
-    "skills:list": "node scripts/enable-skill.mjs --list"
+    "skills:list": "node scripts/enable-skill.mjs --list",
+    "harness:build": "python3 scripts/build-harness-promo.py",
+    "harness:stages": "python3 scripts/build-harness-promo.py --words-source-only && mkdir -p out && touch out/harness-promo-45s.mp4 && npm run reel -- --lang en --project videos/harness-promo-45s --input videos/harness-promo-45s/assets/narration.wav --offline --from-json videos/harness-promo-45s/config/words.source.json --skip-compose --skip-render --skip-qa --fps 30 --out out/harness-promo-45s.mp4 --goal saves && node scripts/compose.mjs --lang en --project videos/harness-promo-45s --headline \"One idea. One finished reel.\" --subtitle \"Word-timed captions and frame-locked motion\" && npm run harness:build",
+    "harness:check": "npm run check -- --project videos/harness-promo-45s",
+    "harness:render": "npm run render -- --project videos/harness-promo-45s --out out/harness-promo-45s.mp4 --lang en --backend hyperframes --fps 30",
+    "harness:qa": "npm run qa -- --project videos/harness-promo-45s --out out/harness-promo-45s.mp4 --lang en --fps 30",
+    "harness:all": "npm run harness:stages && npm run harness:check && npm run harness:render && npm run harness:qa"
   },
   "dependencies": {
     "@ffmpeg-installer/ffmpeg": "1.1.0",

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=1080, height=1920" />
+<title>Keyless Reel Harness — 45s promo</title>
+<script src="assets/gsap.min.js"></script>
+<style>
+@font-face{font-family:"ReelLatin";src:url("assets/fonts/DejaVuSans-Bold.ttf") format("truetype");font-weight:700;font-display:block;}
+@font-face{font-family:"ReelArabic";src:url("assets/fonts/ScheherazadeNew-Bold.ttf") format("truetype");font-weight:700;font-display:block;}
+@font-face{font-family:"ReelAmiri";src:url("assets/fonts/Amiri-Regular.ttf") format("truetype");font-weight:400;font-display:block;}
+:root{--bg:#07070A;--gold:#D9A84E;--gold2:#F3D489;--muted:#D1CBC0;}
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000;color:#F5F5F7;font-family:"ReelLatin",sans-serif;direction:ltr;}
+#root{position:relative;width:100%;height:100%;overflow:hidden;background:var(--bg);direction:ltr;}
+.comp-layer{position:absolute;inset:0;pointer-events:none;}
+.beat-layer{z-index:1;opacity:0;}
+.caption-layer{z-index:4;}
+#brand{position:absolute;left:120px;top:190px;width:360px;font-size:28px;letter-spacing:.20em;color:var(--gold);text-transform:uppercase;z-index:5;}
+#mode{position:absolute;right:120px;top:190px;width:360px;font-size:28px;letter-spacing:.16em;color:#D1CBC0;text-transform:uppercase;text-align:right;z-index:5;}
+#grain{position:absolute;inset:0;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");z-index:6;pointer-events:none;}
+#progress-track{position:absolute;left:0;right:0;bottom:0;height:8px;background:rgba(255,255,255,.12);z-index:8;pointer-events:none;}
+#progress{height:100%;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold2));transform:scaleX(0);transform-origin:left center;}
+</style>
+</head>
+<body>
+<div id="root" data-composition-id="main" data-start="0" data-duration="45.000" data-width="1080" data-height="1920" data-fps="30" data-background="#07070A">
+  <div id="s-hook-host" class="comp-layer beat-layer" data-composition-id="s-hook" data-composition-src="compositions/s-hook.html" data-start="0.000" data-duration="5.000" data-width="1080" data-height="1920" data-track-index="1"></div>
+  <div id="s-audio-host" class="comp-layer beat-layer" data-composition-id="s-audio" data-composition-src="compositions/s-audio.html" data-start="5.000" data-duration="6.000" data-width="1080" data-height="1920" data-track-index="1"></div>
+  <div id="s-anime-host" class="comp-layer beat-layer" data-composition-id="s-anime" data-composition-src="compositions/s-anime.html" data-start="11.000" data-duration="6.000" data-width="1080" data-height="1920" data-track-index="1"></div>
+  <div id="s-mo-host" class="comp-layer beat-layer" data-composition-id="s-mo" data-composition-src="compositions/s-mo.html" data-start="17.000" data-duration="6.000" data-width="1080" data-height="1920" data-track-index="1"></div>
+  <div id="s-rough-host" class="comp-layer beat-layer" data-composition-id="s-rough" data-composition-src="compositions/s-rough.html" data-start="23.000" data-duration="8.000" data-width="1080" data-height="1920" data-track-index="1"></div>
+  <div id="s-remotion-host" class="comp-layer beat-layer" data-composition-id="s-remotion" data-composition-src="compositions/s-remotion.html" data-start="31.000" data-duration="6.000" data-width="1080" data-height="1920" data-track-index="1"></div>
+  <div id="s-pillow-host" class="comp-layer beat-layer" data-composition-id="s-pillow" data-composition-src="compositions/s-pillow.html" data-start="37.000" data-duration="8.000" data-width="1080" data-height="1920" data-track-index="1"></div>
+  <div id="captions-host" class="comp-layer caption-layer" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="45.000" data-width="1080" data-height="1920" data-track-index="3" data-track-kind="captions" data-layout-allow-safe-zone></div>
+  <div id="brand" data-layout-allow-overlap data-layout-allow-safe-zone>REEL STUDIO</div>
+  <div id="mode" data-layout-allow-overlap data-layout-allow-safe-zone>KEYLESS · OFFLINE</div>
+  <div id="grain"></div>
+  <div id="progress-track"><div id="progress"></div></div>
+  <audio id="narration" data-start="0" data-duration="45.000" data-track-index="2" data-volume="1" preload="auto" src="assets/audio.wav"></audio>
+</div>
+<script>
+const mainTl = gsap.timeline({paused:true});
+mainTl.fromTo('#progress',{scaleX:0},{scaleX:1,duration:45.000,ease:'none'},0);
+mainTl.set('#brand',{opacity:1},0);
+mainTl.set('#mode',{opacity:1},0);
+mainTl.set({}, {}, 45.000);
+window.__timelines = window.__timelines || {};
+window.__timelines['main'] = mainTl;
+window.__duration = 45.000;
+window.__fps = 30;
+</script>
+</body>
+</html>

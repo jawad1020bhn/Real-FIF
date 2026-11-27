@@ -1,0 +1,11 @@
+1
+00:00:00,400 --> 00:00:10,100
+Meet the reel harness. Audio first: silence trimmed, loudness tamed, reviewed words timed offline. Auto-Editor and WhisperX are installed, but model fetches stay off.
+
+2
+00:00:10,300 --> 00:00:27,300
+Composition is code. HyperFrames mounts scenes; GSAP drives paused timelines. anime.js, mo.js, Rough.js, and Three.js animate cards, bursts, sketches, and wireframes.
+
+3
+00:00:27,500 --> 00:00:39,200
+Remotion renders a clip; FFmpeg stitches it. Strict checks, QA, Pillow, Arabic shaping, soundfile, numpy, and skills audit stay local. Keyless. Offline. Run it again.
